@@ -1,0 +1,110 @@
+
+.card.data-v-eb380868{
+	margin: 20rpx 10rpx 10rpx 20rpx;
+	background-color: #f5f5f5;
+	box-shadow: 3rpx 3rpx 10rpx gray;
+	padding: 20rpx 0 0 20rpx;
+}
+.head.data-v-eb380868{
+	position: relative;
+	padding-left: 80rpx;
+	min-height: 80rpx;
+	display: flex;
+	flex-direction: column;
+}
+.card .head .headpct.data-v-eb380868{
+	position: absolute;
+	width: 60rpx;
+	height: 60rpx;
+	left: 0;
+	top: 0;
+	border-radius: 50%;
+}
+.head>._span.data-v-eb380868{
+	font-size: 25rpx;
+	font-weight: 600;
+	flex: 2;
+}
+.head .tag.data-v-eb380868 {
+	flex: 1;
+	display: inline-block;
+	font-size: 15rpx;
+	font-weight: 600;
+	float: left;
+}
+.head .tag ._span.data-v-eb380868{
+	display: inline-block;
+	padding: 0rpx 10rpx;
+	margin-right: 10rpx;
+}
+.head .tag ._span.data-v-eb380868:nth-child(2n+1){
+	color:#40bcff ;
+	background-color: #ceeeff;
+	border-radius: 15rpx;
+}
+.head .tag ._span.data-v-eb380868:nth-child(2n){
+	color: #ff5821;
+	background-color: #ffd7ce;
+	border-radius: 15rpx;
+}
+.comment.data-v-eb380868{
+	margin: 30rpx 10rpx;
+}
+.comment ._span.data-v-eb380868{
+	display:inline-block;
+	color: #616161;
+	font-size: 30rxp;
+	font-weight: 300;
+	overflow: hidden;
+	word-wrap: break-word;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 111;
+	-webkit-box-orient: vertical
+}
+.comment .text.data-v-eb380868{
+	/* line-height: 40rpx; */
+	/* height: 120rpx; */
+}
+.comment .notShowAll.data-v-eb380868{
+	-webkit-line-clamp: 3;
+}
+.comment .showallbtn.data-v-eb380868{
+	font-size: 30rxp;
+	color: #40bcff;
+	margin-top: 10rpx;
+	margin-left: 30rpx;
+}
+.comment .compct.data-v-eb380868{
+	display: inline-block;
+	margin-top: 20rpx;
+	width: 200rpx;
+	height:  200rpx;
+}
+.label.data-v-eb380868{
+}
+.label ._span.data-v-eb380868:nth-of-type(1){
+	display: inline-block;
+	width: auto;
+	color: #459bdd;
+	line-height: 40rpx;
+	text-align: center;
+	padding: 0rpx 15rpx;
+	font-size: 20rpx;
+	border-radius: 25rpx;
+	background-image: linear-gradient(to right bottom,#99f5ff,#d7fff0 60%);
+}
+.label ._span:nth-of-type(1) image.data-v-eb380868{
+	width: 30rpx;
+	height: 30rpx;
+	margin-right: 10rpx;
+	position: relative;
+	bottom: -8rpx;
+}
+.label ._span.data-v-eb380868:nth-of-type(2){
+	display: block;
+	margin:20rpx 20rpx 20rpx 20rpx;
+	color: gray;
+	font-size: 18rpx;
+}
+

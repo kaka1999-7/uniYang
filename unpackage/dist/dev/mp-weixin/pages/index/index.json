@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "杨大爷心里咨询",
+  "usingComponents": {
+    "uni-icons": "/uni_modules/uni-icons/components/uni-icons/uni-icons",
+    "comment": "/component/commenttool/comfocous",
+    "qs": "/component/commenttool/QS"
+  }
+}

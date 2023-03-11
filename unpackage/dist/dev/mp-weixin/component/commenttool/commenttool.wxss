@@ -1,0 +1,24 @@
+
+.content .left.data-v-7d82cdaf{
+	width: 50%;
+	display: inline-block;
+}
+.content .left image.data-v-7d82cdaf{
+	margin-left: 20%;
+}
+.content .left image.data-v-7d82cdaf:nth-child(1){
+	margin-left: 10%;
+}
+.content image.data-v-7d82cdaf{
+	width: 40rpx;
+	height: 40rpx;
+}
+.content image.data-v-7d82cdaf:nth-child(1){
+	width: 35rpx;
+	height: 35rpx
+}
+.content>image.data-v-7d82cdaf{
+	float: right;
+	margin-right: 5%;
+}
+

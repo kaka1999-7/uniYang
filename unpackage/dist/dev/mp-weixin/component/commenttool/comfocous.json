@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "commenttool": "/component/commenttool/commenttool"
+  }
+}
