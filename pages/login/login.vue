@@ -47,33 +47,33 @@
 					loginType:"phone"
 				},
 				registedPerson:[{
-					account:"admin001",
-					password:"pasAdmin001",
+					account:"admin01",
+					password:"123456",
 					type:"administrator"
 				},
 				{
-					account:"admin002",
-					password:"pasAdmin002",
-					type:"administrator"
+					account:"doctor01",
+					password:"123456",
+					type:"doctor"
 				},
 				{
-					account:"admin003",
-					password:"pasAdmin003",
-					type:"administrator"
+					account:"doctor02",
+					password:"123456",
+					type:"doctor"
 				},
 				{
-					account:"member001",
-					password:"pasMember001",
+					account:"member01",
+					password:"123456",
 					type:"member"
 				},
 				{
-					account:"member002",
-					password:"pasMember002",
+					account:"member02",
+					password:"123456",
 					type:"member"
 				},
 				{
-					account:"member002",
-					password:"pasMember003",
+					account:"member02",
+					password:"123456",
 					type:"member"
 				}]
 			}

@@ -38,8 +38,9 @@
 						@click="ckCatagery(index)">{{item.tittle}} <span></span></span>
 				</view>
 			</view>
-			<scroll-view class="tag" scroll-x="true" @scroll="scroll" :show-scrollbar='false' scroll-left="120">
-				<view class=" tag-item" v-for="item in tags" :key="item.id" :class="{active:item.isCurent}" @click="ckItem(item,tags)">{{item.tittle}}</view>
+			<scroll-view class="tag" scroll-x="true" @scroll="scroll" :show-scrollbar='false' scroll-left="0">
+				<view class=" tag-item" v-for="item in tags" :key="item.id" :class="{active:item.isCurent}"
+					@click="ckItem(item,tags)">{{item.tittle}}</view>
 			</scroll-view>
 			<!-- 详细选项卡 -->
 			<view class="ct" :class="{hidden:curentCatagery>=5}">
@@ -64,8 +65,10 @@
 							<template v-for="item in catagery[0].provinceList" v-if="item.isCurent">
 								<template v-for="item2 in item.cityList" v-if="item2.isCurent">
 									<view v-for="item3 in item2.areaList" :key="item3.id"
-										:class="{active:item3.isCurent}" @click="ckItem(item3,item2,'filter'); cityFilter('filter')">
-										{{item3.tittle}}</view>
+										:class="{active:item3.isCurent}"
+										@click="ckItem(item3,item2,'filter'); cityFilter('filter')">
+										{{item3.tittle}}
+									</view>
 								</template>
 							</template>
 						</scroll-view>
@@ -149,70 +152,68 @@
 			return {
 				option: {},
 				search_placeholder: "缓解焦虑",
-				filter:{
-					location:["","",""],
-					price:[],
-					time:[],
-					sort:"",
-					otherfilter:[]
+				filter: {
+					location: ["", "", ""],
+					price: [],
+					time: [],
+					sort: "",
+					otherfilter: []
 				},
 				scrollTop: 0,
 				old: {
 					scrollTop: 0
 				},
-				tags:[
-					{
-						tittle:'全部',
-						id:'headtag1',
-						isCurent:true
+				tags: [{
+						tittle: '全部',
+						id: 'headtag1',
+						isCurent: true
 					},
 					{
-						tittle:'情绪管理',
-						id:'headtag2',
-						isCurent:false
+						tittle: '情绪管理',
+						id: 'headtag2',
+						isCurent: false
 					},
 					{
-						tittle:'个人成长',
-						id:'headtag3',
-						isCurent:false
+						tittle: '个人成长',
+						id: 'headtag3',
+						isCurent: false
 					},
 					{
-						tittle:'心里健康',
-						id:'headtag4',
-						isCurent:false
+						tittle: '心里健康',
+						id: 'headtag4',
+						isCurent: false
 					},
 					{
-						tittle:'恋爱心里',
-						id:'headtag5',
-						isCurent:false
+						tittle: '恋爱情感',
+						id: 'headtag5',
+						isCurent: false
 					},
 					{
-						tittle:'家庭关系',
-						id:'headtag6',
-						isCurent:false
+						tittle: '家庭关系',
+						id: 'headtag6',
+						isCurent: false
 					},
 					{
-						tittle:'性心理',
-						id:'headtag7',
-						isCurent:false
+						tittle: '性心理',
+						id: 'headtag7',
+						isCurent: false
 					},
 					{
-						tittle:'婚姻家庭',
-						id:'headtag8',
-						isCurent:false
+						tittle: '婚姻家庭',
+						id: 'headtag8',
+						isCurent: false
 					},
 					{
-						tittle:'亲子教育',
-						id:'headtag9',
-						isCurent:false
+						tittle: '亲子教育',
+						id: 'headtag9',
+						isCurent: false
 					}
 				],
 				catagery: [{
 						tittle: "城市",
 						isCurent: false,
 						id: 'catagery1',
-						provinceList: [
-							{
+						provinceList: [{
 								tittle: '四川省',
 								isCurent: false,
 								id: 'province1',
@@ -563,7 +564,7 @@
 						isCurent: false,
 						id: 'catagery5',
 						filterList: [{
-								id:"filter1",
+								id: "filter1",
 								tittle: "咨询师性别",
 								filterItem: [{
 										tittle: '不限',
@@ -580,7 +581,7 @@
 								]
 							},
 							{
-								id:"filter2",
+								id: "filter2",
 								tittle: "咨询群体",
 								filterItem: [{
 										tittle: '不限',
@@ -629,7 +630,7 @@
 								]
 							},
 							{
-								id:"filter3",
+								id: "filter3",
 								tittle: "咨询方式",
 								filterItem: [{
 										tittle: '不限',
@@ -650,7 +651,7 @@
 								]
 							},
 							{
-								id:"filter4",
+								id: "filter4",
 								tittle: "咨询师年龄",
 								filterItem: [{
 										tittle: '不限',
@@ -678,148 +679,348 @@
 					}
 				],
 				curentCatagery: 1000,
-				defaultPersonList:[],
-				originPersonList:[
-					{
-						id:'person0',
-						name:'杨大爷',
-						experienc:'从业18年 · 1000000+人咨询',
-						consultPeople:1000000,
-						price:300,
-						level:'宇宙级心里医师',
-						tags:"情绪管理 | 个人成长 | 心里健康",
-						location:'四川省广安市广安区',
-						headUrl:"../../static/physiciansList/head3.webp",
-						activities:[
-							{tittle:'满减活动',id:'person0act1'},
-							{tittle:'今日报价',id:'person0act2'},
-							{tittle:'预沟通',id:'person0act3'}
+				// defaultPersonList:[],
+				originPersonList: [{
+						id: 'person0',
+						name: '杨大爷',
+						experienc: '从业18年 · 1000000+人咨询',
+						consultPeople: 1000000,
+						price: 300,
+						accpetType: ['视频', '语音', '面对面'],
+						tagList: ['海外专家', '职场发展', '情绪管理', '个人成长', '心里健康', '人际关系', '婚姻家庭', '恋爱情感', '情绪压力', '亲子教育',
+							'性心理', '家庭关系'
 						],
-						comment:"情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理"
+						timeList: [{
+								id: "time1",
+								date: 1,
+								part: ['全天', '', '', '']
+							},
+							{
+								id: "time2",
+								date: 2,
+								part: ['', '上午', '', '']
+							},
+						],
+						level: '宇宙级心里医师',
+						tags: "情绪管理 | 个人成长 | 心里健康",
+						location: '四川省广安市广安区',
+						headUrl: "../../static/physiciansList/head3.webp",
+						activities: [{
+								tittle: '满减活动',
+								id: 'person0act1'
+							},
+							{
+								tittle: '今日报价',
+								id: 'person0act2'
+							},
+							{
+								tittle: '预沟通',
+								id: 'person0act3'
+							}
+						],
+						comment: "情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理"
 					},
 					{
-						id:'person1',
-						name:'杨二爷',
-						experienc:'从业1000年 · 10000+人咨询',
-						consultPeople:10000,
-						price:500,
-						level:'宇宙级心里医师',
-						tags:"婚姻家庭 | 个人成长 | 亲子教育",
-						location:'四川省广安市前锋区',
-						headUrl:"../../static/physiciansList/head2.webp",
-						activities:[
-							{tittle:'满减活动',id:'person1act1'},
-							{tittle:'今日报价',id:'person1act2'},
-							{tittle:'预沟通',id:'person1act3'}
+						id: 'person1',
+						name: '杨二爷',
+						experienc: '从业1000年 · 10000+人咨询',
+						consultPeople: 10000,
+						price: 500,
+						level: '宇宙级心里医师',
+						tags: "婚姻家庭 | 个人成长 | 亲子教育",
+						location: '四川省广安市前锋区',
+						headUrl: "../../static/physiciansList/head2.webp",
+						tagList: ['海外专家', '职场发展', '情绪管理', '个人成长', 
 						],
-						comment:"情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理"
+						timeList: [{
+								id: "time1",
+								date: 26,
+								part: ['全天', '上午', '下午', '']
+							},
+							{
+								id: "time2",
+								date: 27,
+								part: ['全天', '上午', '', '']
+							},
+							{
+								id: "time3",
+								date: 28,
+								part: ['全天', '上午', '', '']
+							},
+							{
+								id: "time4",
+								date: 29,
+								part: ['全天', '上午', '', '']
+							}
+						],
+						activities: [{
+								tittle: '满减活动',
+								id: 'person1act1'
+							},
+							{
+								tittle: '今日报价',
+								id: 'person1act2'
+							},
+							{
+								tittle: '预沟通',
+								id: 'person1act3'
+							}
+						],
+						comment: "情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理"
 					},
 					{
-						id:'person2',
-						name:'杨三爷',
-						experienc:'从业10年 · 10+人咨询',
-						consultPeople:10,
-						price:100,
-						level:'宇宙级心里医师',
-						tags:"情绪管理 | 个人成长 | 人际关系",
-						location:'湖北省武汉市江汉区',
-						headUrl:"../../static/physiciansList/head1.jpg",
-						activities:[
-							{tittle:'满减活动',id:'person2act1'},
-							{tittle:'今日报价',id:'person2act2'},
-							{tittle:'预沟通',id:'person2act3'}
+						id: 'person2',
+						name: '杨三爷',
+						experienc: '从业10年 · 10+人咨询',
+						consultPeople: 10,
+						price: 100,
+						level: '宇宙级心里医师',
+						tags: "心里健康 | 人际关系 | 家庭关系",
+						location: '湖北省武汉市江汉区',
+						headUrl: "../../static/physiciansList/head1.jpg",
+						accpetType: ['语音', '面对面'],
+						tagList: ['心里健康', '人际关系', '婚姻家庭', '家庭关系'],
+						timeList: [{
+								id: "time1",
+								date: 3,
+								part: ['', '上午', '', '']
+							},
+							{
+								id: "time2",
+								date: 4,
+								part: ['全天', '', '', '']
+							}
 						],
-						comment:"情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理"
+						activities: [{
+								tittle: '满减活动',
+								id: 'person2act1'
+							},
+							{
+								tittle: '今日报价',
+								id: 'person2act2'
+							},
+							{
+								tittle: '预沟通',
+								id: 'person2act3'
+							}
+						],
+						comment: "情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理"
 					},
 					{
-						id:'person3',
-						name:'杨四爷',
-						experienc:'从业1000年 · 900+人咨询',
-						consultPeople:900,
-						price:700,
-						level:'宇宙级心里医师',
-						tags:"情绪管理 | 个人成长 | 心里健康",
-						location:'湖北省武汉市江夏区',
-						headUrl:"../../static/physiciansList/1.jpg",
-						activities:[
-							{tittle:'满减活动',id:'person3act1'},
-							{tittle:'今日报价',id:'person3act2'},
-							{tittle:'预沟通',id:'person3act3'}
+						id: 'person3',
+						name: '杨四爷',
+						experienc: '从业1000年 · 900+人咨询',
+						consultPeople: 900,
+						price: 700,
+						level: '宇宙级心里医师',
+						tags: "恋爱情感 | 情绪压力 | 亲子教育",
+						location: '湖北省武汉市江夏区',
+						headUrl: "../../static/physiciansList/1.jpg",
+						accpetType: ['语音', '面对面'],
+						tagList: ['恋爱情感', '情绪压力', '亲子教育','性心理'],
+						timeList: [{
+								id: "time1",
+								date: 5,
+								part: ['', '上午', '下午', '']
+							},
+							{
+								id: "time2",
+								date: 6,
+								part: ['全天', '', '', '']
+							},
+							{
+								id: "time3",
+								date: 7,
+								part: ['全天', '', '', '']
+							}
 						],
-						comment:"情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理"
+						activities: [{
+								tittle: '满减活动',
+								id: 'person3act1'
+							},
+							{
+								tittle: '今日报价',
+								id: 'person3act2'
+							},
+							{
+								tittle: '预沟通',
+								id: 'person3act3'
+							}
+						],
+						comment: "情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理"
 					},
 				],
-				personList:[
-					{
-						id:'person0',
-						name:'杨大爷',
-						experienc:'从业18年 · 1000000+人咨询',
-						consultPeople:1000000,
-						price:300,
-						level:'宇宙级心里医师',
-						tags:"情绪管理 | 个人成长 | 心里健康",
-						location:'四川省广安市广安区',
-						headUrl:"../../static/physiciansList/head3.webp",
-						activities:[
-							{tittle:'满减活动',id:'person0act1'},
-							{tittle:'今日报价',id:'person0act2'},
-							{tittle:'预沟通',id:'person0act3'}
+				personList: [{
+						id: 'person0',
+						name: '杨大爷',
+						experienc: '从业18年 · 1000000+人咨询',
+						consultPeople: 1000000,
+						price: 300,
+						accpetType: ['视频', '语音', '面对面'],
+						tagList: ['海外专家', '职场发展', '情绪管理', '个人成长', '心里健康', '人际关系', '婚姻家庭', '恋爱情感', '情绪压力', '亲子教育',
+							'性心理', '家庭关系'
 						],
-						comment:"情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理"
+						timeList: [{
+								id: "time1",
+								date: 1,
+								part: ['全天', '', '', '']
+							},
+							{
+								id: "time2",
+								date: 2,
+								part: ['', '上午', '', '']
+							},
+						],
+						level: '宇宙级心里医师',
+						tags: "情绪管理 | 个人成长 | 心里健康",
+						location: '四川省广安市广安区',
+						headUrl: "../../static/physiciansList/head3.webp",
+						activities: [{
+								tittle: '满减活动',
+								id: 'person0act1'
+							},
+							{
+								tittle: '今日报价',
+								id: 'person0act2'
+							},
+							{
+								tittle: '预沟通',
+								id: 'person0act3'
+							}
+						],
+						comment: "情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理"
 					},
 					{
-						id:'person1',
-						name:'杨二爷',
-						experienc:'从业8年 · 10000+人咨询',
-						consultPeople:10000,
-						price:500,
-						level:'宇宙级心里医师',
-						tags:"婚姻家庭 | 个人成长 | 亲子教育",
-						location:'四川省广安市前锋区',
-						headUrl:"../../static/physiciansList/head2.webp",
-						activities:[
-							{tittle:'满减活动',id:'person1act1'},
-							{tittle:'今日报价',id:'person1act2'},
-							{tittle:'预沟通',id:'person1act3'}
+						id: 'person1',
+						name: '杨二爷',
+						experienc: '从业1000年 · 10000+人咨询',
+						consultPeople: 10000,
+						price: 500,
+						level: '宇宙级心里医师',
+						tags: "婚姻家庭 | 个人成长 | 亲子教育",
+						location: '四川省广安市前锋区',
+						headUrl: "../../static/physiciansList/head2.webp",
+						tagList: ['海外专家', '职场发展', '情绪管理', '个人成长', 
 						],
-						comment:"情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理"
+						timeList: [{
+								id: "time1",
+								date: 26,
+								part: ['全天', '上午', '下午', '']
+							},
+							{
+								id: "time2",
+								date: 27,
+								part: ['全天', '上午', '', '']
+							},
+							{
+								id: "time3",
+								date: 28,
+								part: ['全天', '上午', '', '']
+							},
+							{
+								id: "time4",
+								date: 29,
+								part: ['全天', '上午', '', '']
+							}
+						],
+						activities: [{
+								tittle: '满减活动',
+								id: 'person1act1'
+							},
+							{
+								tittle: '今日报价',
+								id: 'person1act2'
+							},
+							{
+								tittle: '预沟通',
+								id: 'person1act3'
+							}
+						],
+						comment: "情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理"
 					},
 					{
-						id:'person2',
-						name:'杨三爷',
-						experienc:'从业10年 · 10+人咨询',
-						consultPeople:10,
-						price:100,
-						level:'宇宙级心里医师',
-						tags:"情绪管理 | 个人成长 | 人际关系",
-						location:'湖北省武汉市江汉区',
-						headUrl:"../../static/physiciansList/head1.jpg",
-						activities:[
-							{tittle:'满减活动',id:'person2act1'},
-							{tittle:'今日报价',id:'person2act2'},
-							{tittle:'预沟通',id:'person2act3'}
+						id: 'person2',
+						name: '杨三爷',
+						experienc: '从业10年 · 10+人咨询',
+						consultPeople: 10,
+						price: 100,
+						level: '宇宙级心里医师',
+						tags: "心里健康 | 人际关系 | 家庭关系",
+						location: '湖北省武汉市江汉区',
+						headUrl: "../../static/physiciansList/head1.jpg",
+						accpetType: ['语音', '面对面'],
+						tagList: ['心里健康', '人际关系', '婚姻家庭', '家庭关系'],
+						timeList: [{
+								id: "time1",
+								date: 3,
+								part: ['', '上午', '', '']
+							},
+							{
+								id: "time2",
+								date: 4,
+								part: ['全天', '', '', '']
+							}
 						],
-						comment:"情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理"
+						activities: [{
+								tittle: '满减活动',
+								id: 'person2act1'
+							},
+							{
+								tittle: '今日报价',
+								id: 'person2act2'
+							},
+							{
+								tittle: '预沟通',
+								id: 'person2act3'
+							}
+						],
+						comment: "情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理"
 					},
 					{
-						id:'person3',
-						name:'杨四爷',
-						experienc:'从业1000年 · 900+人咨询',
-						consultPeople:900,
-						price:700,
-						level:'宇宙级心里医师',
-						tags:"情绪管理 | 个人成长 | 心里健康",
-						location:'湖北省武汉市江夏区',
-						headUrl:"../../static/physiciansList/1.jpg",
-						activities:[
-							{tittle:'满减活动',id:'person3act1'},
-							{tittle:'今日报价',id:'person3act2'},
-							{tittle:'预沟通',id:'person3act3'}
+						id: 'person3',
+						name: '杨四爷',
+						experienc: '从业1000年 · 900+人咨询',
+						consultPeople: 900,
+						price: 700,
+						level: '宇宙级心里医师',
+						tags: "恋爱情感 | 情绪压力 | 亲子教育",
+						location: '湖北省武汉市江夏区',
+						headUrl: "../../static/physiciansList/1.jpg",
+						accpetType: ['语音', '面对面'],
+						tagList: ['恋爱情感', '情绪压力', '亲子教育','性心理'],
+						timeList: [{
+								id: "time1",
+								date: 5,
+								part: ['', '上午', '下午', '']
+							},
+							{
+								id: "time2",
+								date: 6,
+								part: ['全天', '', '', '']
+							},
+							{
+								id: "time3",
+								date: 7,
+								part: ['全天', '', '', '']
+							}
 						],
-						comment:"情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理"
+						activities: [{
+								tittle: '满减活动',
+								id: 'person3act1'
+							},
+							{
+								tittle: '今日报价',
+								id: 'person3act2'
+							},
+							{
+								tittle: '预沟通',
+								id: 'person3act3'
+							}
+						],
+						comment: "情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理"
 					},
-				]
-			}
+				],
+				}
 		},
 		onLoad(options) {
 			this.option = options
@@ -829,96 +1030,96 @@
 		},
 		methods: {
 			// 前往个人详情页
-			toPerson(item){
+			toPerson(item) {
 				uni.navigateTo({
-					url:`/pages/person/person?id=${item.id}`
+					url: `/pages/person/person?id=${item.id}`
 				})
 			},
 			// 生成过滤列表
-			filterArr(){
-				this.personList=[]
+			filterArr() {
+				this.personList = []
 				// 城市筛选
-				let cityFilter=""
-				this.filter.location.forEach(el=>{
-					if(el!="不限") cityFilter+=el
+				let cityFilter = ""
+				this.filter.location.forEach(el => {
+					if (el != "不限") cityFilter += el
 				})
-				if(cityFilter!=""){
-					this.originPersonList.forEach(el=>{
-						if(el.location.indexOf(cityFilter)>-1){
+				if (cityFilter != "") {
+					this.originPersonList.forEach(el => {
+						if (el.location.indexOf(cityFilter) > -1) {
 							this.personList.push(JSON.parse(JSON.stringify(el)))
 						}
 					})
-				}else{
-					this.personList=JSON.parse(JSON.stringify(this.originPersonList))
+				} else {
+					this.personList = JSON.parse(JSON.stringify(this.originPersonList))
 				}
-				
+
 				// 价格筛选
-				if(this.filter.price.length>=1){
-					this.personList=this.personList.filter(e=>{
-						let exit=false
-						this.filter.price.forEach(el=>{
-							let arr=el.split("-")
-							let min=parseInt(arr[0])
-							let max=parseInt(arr[1])
-							if(e.price>=min&&e.price<max){
-								exit=true
+				if (this.filter.price.length >= 1) {
+					this.personList = this.personList.filter(e => {
+						let exit = false
+						this.filter.price.forEach(el => {
+							let arr = el.split("-")
+							let min = parseInt(arr[0])
+							let max = parseInt(arr[1])
+							if (e.price >= min && e.price < max) {
+								exit = true
 							}
 						})
 						return exit
 					})
 				}
-				
+
 				// 排序
-				if(this.filter.sort!=""){
-					if(this.filter.sort==='默认排序'){
-						this.filter.sort=""
+				if (this.filter.sort != "") {
+					if (this.filter.sort === '默认排序') {
+						this.filter.sort = ""
 						this.filterArr()
-					}else if(this.filter.sort==='低价优先'){
-						let temp =JSON.parse(JSON.stringify(this.personList))
-						temp.sort((el1,el2)=>(el1.price-el2.price))
-						this.personList=temp
-					}else if(this.filter.sort==='预约最多'){
-						let temp =JSON.parse(JSON.stringify(this.personList))
-						temp.sort((el1,el2)=>(el2.consultPeople-el1.consultPeople))
-						this.personList=temp
+					} else if (this.filter.sort === '低价优先') {
+						let temp = JSON.parse(JSON.stringify(this.personList))
+						temp.sort((el1, el2) => (el1.price - el2.price))
+						this.personList = temp
+					} else if (this.filter.sort === '预约最多') {
+						let temp = JSON.parse(JSON.stringify(this.personList))
+						temp.sort((el1, el2) => (el2.consultPeople - el1.consultPeople))
+						this.personList = temp
 					}
-					
+
 				}
-				
+
 			},
 			// 获取城市过滤参数
-			cityFilter(type){
-				if(type==="filter"){
-					let filterPromise=new Promise(resolve=>{
-						this.catagery[0].provinceList.forEach((el,index)=>{
-							if(el.isCurent){
-								this.filter.location[0]=el.tittle
+			cityFilter(type) {
+				if (type === "filter") {
+					let filterPromise = new Promise(resolve => {
+						this.catagery[0].provinceList.forEach((el, index) => {
+							if (el.isCurent) {
+								this.filter.location[0] = el.tittle
 								resolve(el)
 							}
 						})
-					}).then(res=>{
+					}).then(res => {
 						let index
-						res.cityList.forEach((el,ind)=>{
-							if(el.isCurent){
-								this.filter.location[1]=el.tittle
-								index=ind
+						res.cityList.forEach((el, ind) => {
+							if (el.isCurent) {
+								this.filter.location[1] = el.tittle
+								index = ind
 							}
 						})
 						return Promise.resolve(res.cityList[index])
-					}).then(res=>{
-						res.areaList.forEach((el)=>{
-							if(el.isCurent){
-								this.filter.location[2]=el.tittle
+					}).then(res => {
+						res.areaList.forEach((el) => {
+							if (el.isCurent) {
+								this.filter.location[2] = el.tittle
 							}
 						})
 						this.filterArr()
 						this.catagery.forEach(el => {
 							el.isCurent = false
 						})
-						this.curentCatagery=1000
+						this.curentCatagery = 1000
 					})
 				}
-				
+
 			},
 			// 点击一级分类列表
 			ckCatagery(ind) {
@@ -935,23 +1136,23 @@
 			},
 			// 取消分类详情页展示,同时获取过滤信息
 			catagerySure(type) {
-				if(type==='price'){
-					this.filter.price=[]
-					this.catagery[1].priceList.forEach(el=>{
-						if(el.isCurent) this.filter.price.push(el.price)
+				if (type === 'price') {
+					this.filter.price = []
+					this.catagery[1].priceList.forEach(el => {
+						if (el.isCurent) this.filter.price.push(el.price)
 					})
 				}
-				if(type==='sort'){
-					this.catagery[3].sortList.forEach(el=>{
-						if(el.isCurent) this.filter.sort=el.tittle
+				if (type === 'sort') {
+					this.catagery[3].sortList.forEach(el => {
+						if (el.isCurent) this.filter.sort = el.tittle
 					})
 				}
-				if(type==='nolimitcity'){
-					this.catagery[0].provinceList.forEach(el=>el.isCurent=false)
-					this.filter.location=["","",""]
+				if (type === 'nolimitcity') {
+					this.catagery[0].provinceList.forEach(el => el.isCurent = false)
+					this.filter.location = ["", "", ""]
 				}
 				this.filterArr()
-				
+
 				this.catagery.forEach(el => {
 					el.isCurent = false
 				})
@@ -1408,8 +1609,8 @@
 		background-color: #fff;
 		position: absolute;
 	}
-	.hidden{
+
+	.hidden {
 		display: none;
 	}
-	
 </style>

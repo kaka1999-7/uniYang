@@ -1,6 +1,6 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/physiciansList/physiciansList"],{
 
-/***/ 59:
+/***/ 71:
 /*!*******************************************************************************************************************!*\
   !*** C:/Users/ASUS/Hbuilder/HBuilderX/project/uniYang/main.js?{"page":"pages%2FphysiciansList%2FphysiciansList"} ***!
   \*******************************************************************************************************************/
@@ -12,13 +12,13 @@
 
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 4));
-var _physiciansList = _interopRequireDefault(__webpack_require__(/*! ./pages/physiciansList/physiciansList.vue */ 60));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} // @ts-ignore
+var _physiciansList = _interopRequireDefault(__webpack_require__(/*! ./pages/physiciansList/physiciansList.vue */ 72));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} // @ts-ignore
 wx.__webpack_require_UNI_MP_PLUGIN__ = __webpack_require__;createPage(_physiciansList.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
-/***/ 60:
+/***/ 72:
 /*!************************************************************************************************!*\
   !*** C:/Users/ASUS/Hbuilder/HBuilderX/project/uniYang/pages/physiciansList/physiciansList.vue ***!
   \************************************************************************************************/
@@ -27,10 +27,10 @@ wx.__webpack_require_UNI_MP_PLUGIN__ = __webpack_require__;createPage(_physician
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _physiciansList_vue_vue_type_template_id_cd0f4c34_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./physiciansList.vue?vue&type=template&id=cd0f4c34&scoped=true& */ 61);
-/* harmony import */ var _physiciansList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./physiciansList.vue?vue&type=script&lang=js& */ 63);
+/* harmony import */ var _physiciansList_vue_vue_type_template_id_cd0f4c34_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./physiciansList.vue?vue&type=template&id=cd0f4c34&scoped=true& */ 73);
+/* harmony import */ var _physiciansList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./physiciansList.vue?vue&type=script&lang=js& */ 75);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _physiciansList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _physiciansList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _physiciansList_vue_vue_type_style_index_0_id_cd0f4c34_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./physiciansList.vue?vue&type=style&index=0&id=cd0f4c34&scoped=true&lang=css& */ 65);
+/* harmony import */ var _physiciansList_vue_vue_type_style_index_0_id_cd0f4c34_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./physiciansList.vue?vue&type=style&index=0&id=cd0f4c34&scoped=true&lang=css& */ 77);
 /* harmony import */ var _plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js */ 11);
 
 var renderjs
@@ -59,7 +59,7 @@ component.options.__file = "pages/physiciansList/physiciansList.vue"
 
 /***/ }),
 
-/***/ 61:
+/***/ 73:
 /*!*******************************************************************************************************************************************!*\
   !*** C:/Users/ASUS/Hbuilder/HBuilderX/project/uniYang/pages/physiciansList/physiciansList.vue?vue&type=template&id=cd0f4c34&scoped=true& ***!
   \*******************************************************************************************************************************************/
@@ -68,7 +68,7 @@ component.options.__file = "pages/physiciansList/physiciansList.vue"
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_physiciansList_vue_vue_type_template_id_cd0f4c34_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!../../../../plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!../../../../plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!../../../../plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../../plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./physiciansList.vue?vue&type=template&id=cd0f4c34&scoped=true& */ 62);
+/* harmony import */ var _plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_physiciansList_vue_vue_type_template_id_cd0f4c34_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!../../../../plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!../../../../plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!../../../../plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../../plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./physiciansList.vue?vue&type=template&id=cd0f4c34&scoped=true& */ 74);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_physiciansList_vue_vue_type_template_id_cd0f4c34_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_physiciansList_vue_vue_type_template_id_cd0f4c34_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
@@ -81,7 +81,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 62:
+/***/ 74:
 /*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/ASUS/Hbuilder/HBuilderX/project/uniYang/pages/physiciansList/physiciansList.vue?vue&type=template&id=cd0f4c34&scoped=true& ***!
   \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -98,7 +98,7 @@ var components
 try {
   components = {
     uniIcons: function() {
-      return Promise.all(/*! import() | uni_modules/uni-icons/components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-icons/components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-icons/components/uni-icons/uni-icons.vue */ 75))
+      return Promise.all(/*! import() | uni_modules/uni-icons/components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-icons/components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-icons/components/uni-icons/uni-icons.vue */ 88))
     }
   }
 } catch (e) {
@@ -131,7 +131,7 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ 63:
+/***/ 75:
 /*!*************************************************************************************************************************!*\
   !*** C:/Users/ASUS/Hbuilder/HBuilderX/project/uniYang/pages/physiciansList/physiciansList.vue?vue&type=script&lang=js& ***!
   \*************************************************************************************************************************/
@@ -140,14 +140,14 @@ render._withStripped = true
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_physiciansList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../plugins/uniapp-cli/node_modules/babel-loader/lib!../../../../plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!../../../../plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!../../../../plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../../plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./physiciansList.vue?vue&type=script&lang=js& */ 64);
+/* harmony import */ var _plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_physiciansList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../plugins/uniapp-cli/node_modules/babel-loader/lib!../../../../plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!../../../../plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!../../../../plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../../plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./physiciansList.vue?vue&type=script&lang=js& */ 76);
 /* harmony import */ var _plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_physiciansList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_physiciansList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_physiciansList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_physiciansList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
  /* harmony default export */ __webpack_exports__["default"] = (_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_physiciansList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
-/***/ 64:
+/***/ 76:
 /*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/ASUS/Hbuilder/HBuilderX/project/uniYang/pages/physiciansList/physiciansList.vue?vue&type=script&lang=js& ***!
   \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -155,7 +155,10 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var Person = function Person() {__webpack_require__.e(/*! require.ensure | component/physiciansList/card */ "component/physiciansList/card").then((function () {return resolve(__webpack_require__(/*! ../../component/physiciansList/card.vue */ 123));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var Person = function Person() {__webpack_require__.e(/*! require.ensure | component/physiciansList/card */ "component/physiciansList/card").then((function () {return resolve(__webpack_require__(/*! ../../component/physiciansList/card.vue */ 158));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+
 
 
 
@@ -317,8 +320,7 @@ __webpack_require__.r(__webpack_exports__);
       old: {
         scrollTop: 0 },
 
-      tags: [
-      {
+      tags: [{
         tittle: '全部',
         id: 'headtag1',
         isCurent: true },
@@ -339,7 +341,7 @@ __webpack_require__.r(__webpack_exports__);
         isCurent: false },
 
       {
-        tittle: '恋爱心里',
+        tittle: '恋爱情感',
         id: 'headtag5',
         isCurent: false },
 
@@ -368,8 +370,7 @@ __webpack_require__.r(__webpack_exports__);
         tittle: "城市",
         isCurent: false,
         id: 'catagery1',
-        provinceList: [
-        {
+        provinceList: [{
           tittle: '四川省',
           isCurent: false,
           id: 'province1',
@@ -835,22 +836,44 @@ __webpack_require__.r(__webpack_exports__);
 
 
       curentCatagery: 1000,
-      defaultPersonList: [],
-      originPersonList: [
-      {
+      // defaultPersonList:[],
+      originPersonList: [{
         id: 'person0',
         name: '杨大爷',
         experienc: '从业18年 · 1000000+人咨询',
         consultPeople: 1000000,
         price: 300,
+        accpetType: ['视频', '语音', '面对面'],
+        tagList: ['海外专家', '职场发展', '情绪管理', '个人成长', '心里健康', '人际关系', '婚姻家庭', '恋爱情感', '情绪压力', '亲子教育',
+        '性心理', '家庭关系'],
+
+        timeList: [{
+          id: "time1",
+          date: 1,
+          part: ['全天', '', '', ''] },
+
+        {
+          id: "time2",
+          date: 2,
+          part: ['', '上午', '', ''] }],
+
+
         level: '宇宙级心里医师',
         tags: "情绪管理 | 个人成长 | 心里健康",
         location: '四川省广安市广安区',
         headUrl: "../../static/physiciansList/head3.webp",
-        activities: [
-        { tittle: '满减活动', id: 'person0act1' },
-        { tittle: '今日报价', id: 'person0act2' },
-        { tittle: '预沟通', id: 'person0act3' }],
+        activities: [{
+          tittle: '满减活动',
+          id: 'person0act1' },
+
+        {
+          tittle: '今日报价',
+          id: 'person0act2' },
+
+        {
+          tittle: '预沟通',
+          id: 'person0act3' }],
+
 
         comment: "情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理" },
 
@@ -864,10 +887,41 @@ __webpack_require__.r(__webpack_exports__);
         tags: "婚姻家庭 | 个人成长 | 亲子教育",
         location: '四川省广安市前锋区',
         headUrl: "../../static/physiciansList/head2.webp",
-        activities: [
-        { tittle: '满减活动', id: 'person1act1' },
-        { tittle: '今日报价', id: 'person1act2' },
-        { tittle: '预沟通', id: 'person1act3' }],
+        tagList: ['海外专家', '职场发展', '情绪管理', '个人成长'],
+
+        timeList: [{
+          id: "time1",
+          date: 26,
+          part: ['全天', '上午', '下午', ''] },
+
+        {
+          id: "time2",
+          date: 27,
+          part: ['全天', '上午', '', ''] },
+
+        {
+          id: "time3",
+          date: 28,
+          part: ['全天', '上午', '', ''] },
+
+        {
+          id: "time4",
+          date: 29,
+          part: ['全天', '上午', '', ''] }],
+
+
+        activities: [{
+          tittle: '满减活动',
+          id: 'person1act1' },
+
+        {
+          tittle: '今日报价',
+          id: 'person1act2' },
+
+        {
+          tittle: '预沟通',
+          id: 'person1act3' }],
+
 
         comment: "情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理" },
 
@@ -878,13 +932,34 @@ __webpack_require__.r(__webpack_exports__);
         consultPeople: 10,
         price: 100,
         level: '宇宙级心里医师',
-        tags: "情绪管理 | 个人成长 | 人际关系",
+        tags: "心里健康 | 人际关系 | 家庭关系",
         location: '湖北省武汉市江汉区',
         headUrl: "../../static/physiciansList/head1.jpg",
-        activities: [
-        { tittle: '满减活动', id: 'person2act1' },
-        { tittle: '今日报价', id: 'person2act2' },
-        { tittle: '预沟通', id: 'person2act3' }],
+        accpetType: ['语音', '面对面'],
+        tagList: ['心里健康', '人际关系', '婚姻家庭', '家庭关系'],
+        timeList: [{
+          id: "time1",
+          date: 3,
+          part: ['', '上午', '', ''] },
+
+        {
+          id: "time2",
+          date: 4,
+          part: ['全天', '', '', ''] }],
+
+
+        activities: [{
+          tittle: '满减活动',
+          id: 'person2act1' },
+
+        {
+          tittle: '今日报价',
+          id: 'person2act2' },
+
+        {
+          tittle: '预沟通',
+          id: 'person2act3' }],
+
 
         comment: "情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理" },
 
@@ -895,49 +970,128 @@ __webpack_require__.r(__webpack_exports__);
         consultPeople: 900,
         price: 700,
         level: '宇宙级心里医师',
-        tags: "情绪管理 | 个人成长 | 心里健康",
+        tags: "恋爱情感 | 情绪压力 | 亲子教育",
         location: '湖北省武汉市江夏区',
         headUrl: "../../static/physiciansList/1.jpg",
-        activities: [
-        { tittle: '满减活动', id: 'person3act1' },
-        { tittle: '今日报价', id: 'person3act2' },
-        { tittle: '预沟通', id: 'person3act3' }],
+        accpetType: ['语音', '面对面'],
+        tagList: ['恋爱情感', '情绪压力', '亲子教育', '性心理'],
+        timeList: [{
+          id: "time1",
+          date: 5,
+          part: ['', '上午', '下午', ''] },
+
+        {
+          id: "time2",
+          date: 6,
+          part: ['全天', '', '', ''] },
+
+        {
+          id: "time3",
+          date: 7,
+          part: ['全天', '', '', ''] }],
+
+
+        activities: [{
+          tittle: '满减活动',
+          id: 'person3act1' },
+
+        {
+          tittle: '今日报价',
+          id: 'person3act2' },
+
+        {
+          tittle: '预沟通',
+          id: 'person3act3' }],
+
 
         comment: "情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理" }],
 
 
-      personList: [
-      {
+      personList: [{
         id: 'person0',
         name: '杨大爷',
         experienc: '从业18年 · 1000000+人咨询',
         consultPeople: 1000000,
         price: 300,
+        accpetType: ['视频', '语音', '面对面'],
+        tagList: ['海外专家', '职场发展', '情绪管理', '个人成长', '心里健康', '人际关系', '婚姻家庭', '恋爱情感', '情绪压力', '亲子教育',
+        '性心理', '家庭关系'],
+
+        timeList: [{
+          id: "time1",
+          date: 1,
+          part: ['全天', '', '', ''] },
+
+        {
+          id: "time2",
+          date: 2,
+          part: ['', '上午', '', ''] }],
+
+
         level: '宇宙级心里医师',
         tags: "情绪管理 | 个人成长 | 心里健康",
         location: '四川省广安市广安区',
         headUrl: "../../static/physiciansList/head3.webp",
-        activities: [
-        { tittle: '满减活动', id: 'person0act1' },
-        { tittle: '今日报价', id: 'person0act2' },
-        { tittle: '预沟通', id: 'person0act3' }],
+        activities: [{
+          tittle: '满减活动',
+          id: 'person0act1' },
+
+        {
+          tittle: '今日报价',
+          id: 'person0act2' },
+
+        {
+          tittle: '预沟通',
+          id: 'person0act3' }],
+
 
         comment: "情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理" },
 
       {
         id: 'person1',
         name: '杨二爷',
-        experienc: '从业8年 · 10000+人咨询',
+        experienc: '从业1000年 · 10000+人咨询',
         consultPeople: 10000,
         price: 500,
         level: '宇宙级心里医师',
         tags: "婚姻家庭 | 个人成长 | 亲子教育",
         location: '四川省广安市前锋区',
         headUrl: "../../static/physiciansList/head2.webp",
-        activities: [
-        { tittle: '满减活动', id: 'person1act1' },
-        { tittle: '今日报价', id: 'person1act2' },
-        { tittle: '预沟通', id: 'person1act3' }],
+        tagList: ['海外专家', '职场发展', '情绪管理', '个人成长'],
+
+        timeList: [{
+          id: "time1",
+          date: 26,
+          part: ['全天', '上午', '下午', ''] },
+
+        {
+          id: "time2",
+          date: 27,
+          part: ['全天', '上午', '', ''] },
+
+        {
+          id: "time3",
+          date: 28,
+          part: ['全天', '上午', '', ''] },
+
+        {
+          id: "time4",
+          date: 29,
+          part: ['全天', '上午', '', ''] }],
+
+
+        activities: [{
+          tittle: '满减活动',
+          id: 'person1act1' },
+
+        {
+          tittle: '今日报价',
+          id: 'person1act2' },
+
+        {
+          tittle: '预沟通',
+          id: 'person1act3' }],
+
 
         comment: "情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理" },
 
@@ -948,13 +1102,34 @@ __webpack_require__.r(__webpack_exports__);
         consultPeople: 10,
         price: 100,
         level: '宇宙级心里医师',
-        tags: "情绪管理 | 个人成长 | 人际关系",
+        tags: "心里健康 | 人际关系 | 家庭关系",
         location: '湖北省武汉市江汉区',
         headUrl: "../../static/physiciansList/head1.jpg",
-        activities: [
-        { tittle: '满减活动', id: 'person2act1' },
-        { tittle: '今日报价', id: 'person2act2' },
-        { tittle: '预沟通', id: 'person2act3' }],
+        accpetType: ['语音', '面对面'],
+        tagList: ['心里健康', '人际关系', '婚姻家庭', '家庭关系'],
+        timeList: [{
+          id: "time1",
+          date: 3,
+          part: ['', '上午', '', ''] },
+
+        {
+          id: "time2",
+          date: 4,
+          part: ['全天', '', '', ''] }],
+
+
+        activities: [{
+          tittle: '满减活动',
+          id: 'person2act1' },
+
+        {
+          tittle: '今日报价',
+          id: 'person2act2' },
+
+        {
+          tittle: '预沟通',
+          id: 'person2act3' }],
+
 
         comment: "情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理" },
 
@@ -965,13 +1140,39 @@ __webpack_require__.r(__webpack_exports__);
         consultPeople: 900,
         price: 700,
         level: '宇宙级心里医师',
-        tags: "情绪管理 | 个人成长 | 心里健康",
+        tags: "恋爱情感 | 情绪压力 | 亲子教育",
         location: '湖北省武汉市江夏区',
         headUrl: "../../static/physiciansList/1.jpg",
-        activities: [
-        { tittle: '满减活动', id: 'person3act1' },
-        { tittle: '今日报价', id: 'person3act2' },
-        { tittle: '预沟通', id: 'person3act3' }],
+        accpetType: ['语音', '面对面'],
+        tagList: ['恋爱情感', '情绪压力', '亲子教育', '性心理'],
+        timeList: [{
+          id: "time1",
+          date: 5,
+          part: ['', '上午', '下午', ''] },
+
+        {
+          id: "time2",
+          date: 6,
+          part: ['全天', '', '', ''] },
+
+        {
+          id: "time3",
+          date: 7,
+          part: ['全天', '', '', ''] }],
+
+
+        activities: [{
+          tittle: '满减活动',
+          id: 'person3act1' },
+
+        {
+          tittle: '今日报价',
+          id: 'person3act2' },
+
+        {
+          tittle: '预沟通',
+          id: 'person3act3' }],
+
 
         comment: "情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理" }] };
 
@@ -1187,7 +1388,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 65:
+/***/ 77:
 /*!*********************************************************************************************************************************************************!*\
   !*** C:/Users/ASUS/Hbuilder/HBuilderX/project/uniYang/pages/physiciansList/physiciansList.vue?vue&type=style&index=0&id=cd0f4c34&scoped=true&lang=css& ***!
   \*********************************************************************************************************************************************************/
@@ -1196,14 +1397,14 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_2_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_physiciansList_vue_vue_type_style_index_0_id_cd0f4c34_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../plugins/uniapp-cli/node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!../../../../plugins/uniapp-cli/node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!../../../../plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!../../../../plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!../../../../plugins/uniapp-cli/node_modules/postcss-loader/src??ref--6-oneOf-1-3!../../../../plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../../plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./physiciansList.vue?vue&type=style&index=0&id=cd0f4c34&scoped=true&lang=css& */ 66);
+/* harmony import */ var _plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_2_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_physiciansList_vue_vue_type_style_index_0_id_cd0f4c34_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../plugins/uniapp-cli/node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!../../../../plugins/uniapp-cli/node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!../../../../plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!../../../../plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!../../../../plugins/uniapp-cli/node_modules/postcss-loader/src??ref--6-oneOf-1-3!../../../../plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../../plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./physiciansList.vue?vue&type=style&index=0&id=cd0f4c34&scoped=true&lang=css& */ 78);
 /* harmony import */ var _plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_2_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_physiciansList_vue_vue_type_style_index_0_id_cd0f4c34_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_2_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_physiciansList_vue_vue_type_style_index_0_id_cd0f4c34_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_2_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_physiciansList_vue_vue_type_style_index_0_id_cd0f4c34_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_2_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_physiciansList_vue_vue_type_style_index_0_id_cd0f4c34_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
  /* harmony default export */ __webpack_exports__["default"] = (_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_2_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_physiciansList_vue_vue_type_style_index_0_id_cd0f4c34_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
-/***/ 66:
+/***/ 78:
 /*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/ASUS/Hbuilder/HBuilderX/project/uniYang/pages/physiciansList/physiciansList.vue?vue&type=style&index=0&id=cd0f4c34&scoped=true&lang=css& ***!
   \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -1216,5 +1417,5 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ })
 
-},[[59,"common/runtime","common/vendor"]]]);
+},[[71,"common/runtime","common/vendor"]]]);
 //# sourceMappingURL=../../../.sourcemap/mp-weixin/pages/physiciansList/physiciansList.js.map

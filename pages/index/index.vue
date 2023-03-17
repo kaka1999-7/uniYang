@@ -1,113 +1,120 @@
 <template>
 	<view class="container">
-		<!-- 搜索导航 -->
-		<view class="search_container">
-			<view class="search">
-				<input type="text" :placeholder="search_placeholder">
-			</view>
-			<uni-icons type="chat-filled" size="30" color="#a8a8a8"></uni-icons>
-		</view>
-		<view class="main">
-			<!-- 轮播 -->
-			<view class="banner">
-				<swiper indicator-dots="true" class="swiper" circular="true" autoplay="true" interval="5000">
-					<swiper-item v-for="(item,index) in swiperImg" :key="item.id">
-						<image :src="item.url" mode="scaleToFill"></image>
-					</swiper-item>
-				</swiper>
-			</view>
-			<!-- 导航 -->
-			<view class="first-nav">
-				<view class="first-nav-fir">
-					<view class="tittle">
-						<image src="../../static/index/ico-message.png" mode=""></image> 心里咨询
-					</view>
-					<span>888,888</span>
-					<span>人在这里改变</span>
-					<span>马上了解&nbsp;></span>
-					<img class="bgcimg" src="../../static/index/nav.jpeg" alt="">
-
+		<doctor v-if="isDoctor"></doctor>
+		<view class="" v-else >
+			<!-- 搜索导航 -->
+			<view class="search_container">
+				<view class="search">
+					<input type="text" :placeholder="search_placeholder">
 				</view>
-				<view class="first-nav-sec">
-					<view class="">
+				<uni-icons type="chat-filled" size="30" color="#a8a8a8"></uni-icons>
+			</view>
+			<view class="main">
+				<!-- 轮播 -->
+				<view class="banner">
+					<swiper indicator-dots="true" class="swiper" circular="true" autoplay="true" interval="5000">
+						<swiper-item v-for="(item,index) in swiperImg" :key="item.id">
+							<image :src="item.url" mode="scaleToFill"></image>
+						</swiper-item>
+					</swiper>
+				</view>
+				<!-- 导航 -->
+				<view class="first-nav">
+					<view class="first-nav-fir">
 						<view class="tittle">
-							<image src="../../static/index/ico-course.png" mode=""></image>
-							<span>心里课程</span>
+							<image src="../../static/index/ico-message.png" mode=""></image> 心理咨询
 						</view>
-						<span class="txt">9,999在学...</span>
+						<span>888,888</span>
+						<span>人在这里改变</span>
+						<span>马上了解&nbsp;></span>
+						<img class="bgcimg" src="../../static/index/nav.jpeg" alt="">
+			
 					</view>
-					<view class="">
-						<view class="tittle">
-							<image src="../../static/index/ico-test.png" mode=""></image>
-							<span>测试</span>
+					<view class="first-nav-sec">
+						<view class="">
+							<view class="tittle">
+								<image src="../../static/index/ico-course.png" mode=""></image>
+								<span>心理课程</span>
+							</view>
+							<span class="txt">9,999在学...</span>
 						</view>
-						<span class="txt">9,998在测试...</span>
+						<view class="">
+							<view class="tittle">
+								<image src="../../static/index/ico-test.png" mode=""></image>
+								<span>测试</span>
+							</view>
+							<span class="txt">9,998在测试...</span>
+						</view>
+					</view>
+				</view>
+				<view class="second-nav">
+					<view class="item" @click="toPhysiciansList('恋爱情感')">
+						<image src="../../static/index/ico-nav-love.png" mode=""></image>
+						<span>恋爱情感</span>
+					</view>
+					<view class="item" @click="toPhysiciansList('婚姻家庭')">
+						<image src="../../static/index/ico-nav-mary.png" mode=""></image>
+						<span>婚姻家庭</span>
+					</view>
+					<view class="item" @click="toPhysiciansList('情绪压力')">
+						<image src="../../static/index/ico-nav-cry.png" mode=""></image>
+						<span>情绪压力</span>
+					</view>
+					<view class="item" @click="toPhysiciansList('职场发展')">
+						<image src="../../static/index/ico-nav-briefcase.png" mode=""></image>
+						<span>职场发展</span>
+					</view>
+					<view class="item" @click="toPhysiciansList('个人成长')">
+						<image src="../../static/index/ico-nav-grow.png" mode=""></image>
+						<span>个人成长</span>
+					</view>
+					<view class="item" @click="toPhysiciansList('亲子教育')">
+						<image src="../../static/index/ico-nav-child.png" mode=""></image>
+						<span>亲子教育</span>
+					</view>
+					<view class="item" @click="toPhysiciansList('海外专家')">
+						<image src="../../static/index/ico-nav-professor.png" mode=""></image>
+						<span>海外专家</span>
+					</view>
+					<view class="item" @click="toPhysiciansList('人际关系')">
+						<image src="../../static/index/ico-nav-friends.png" mode=""></image>
+						<span>人际关系</span>
+					</view>
+					<view class="item" @click="toPhysiciansList('心里健康')">
+						<image src="../../static/index/ico-nav-healthy.png" mode=""></image>
+						<span>心里健康</span>
+					</view>
+					<view class="item" @click="toPhysiciansList('全部')">
+						<image src="../../static/index/ico-nav-all.png" mode=""></image>
+						<span>全部</span>
+					</view>
+				</view>
+				<view class="hr"></view>
+				<view class="h4">心灵·广场</view>
+				<!-- 评论区 -->
+				<view class="comment">
+					<view class="tab">
+						<span v-for="(item,index) in catagery" :key="item.id" :class="{active:item.isCurent}"
+							@click="ckCatagery(item,index)">{{item.tittle}}</span>
+					</view>
+					<view v-if="curentCatagery!=2">
+						<comment v-for="item in catagery[curentCatagery].commentList" :key="item.id" :person='item'></comment>
+					</view>
+					<view v-if="curentCatagery===2">
+						<qs v-for="item in catagery[2].qsList" :qs="item" :key="item.id"></qs>
 					</view>
 				</view>
 			</view>
-			<view class="second-nav">
-				<view class="item" @click="toPhysiciansList('恋爱情感')">
-					<image src="../../static/index/ico-nav-love.png" mode=""></image>
-					<span>恋爱情感</span>
-				</view>
-				<view class="item" @click="toPhysiciansList('婚姻家庭')">
-					<image src="../../static/index/ico-nav-mary.png" mode=""></image>
-					<span>婚姻家庭</span>
-				</view>
-				<view class="item" @click="toPhysiciansList('情绪压力')">
-					<image src="../../static/index/ico-nav-cry.png" mode=""></image>
-					<span>情绪压力</span>
-				</view>
-				<view class="item" @click="toPhysiciansList('职场发展')">
-					<image src="../../static/index/ico-nav-briefcase.png" mode=""></image>
-					<span>职场发展</span>
-				</view>
-				<view class="item" @click="toPhysiciansList('个人成长')">
-					<image src="../../static/index/ico-nav-grow.png" mode=""></image>
-					<span>个人成长</span>
-				</view>
-				<view class="item" @click="toPhysiciansList('亲子教育')">
-					<image src="../../static/index/ico-nav-child.png" mode=""></image>
-					<span>亲子教育</span>
-				</view>
-				<view class="item" @click="toPhysiciansList('海外专家')">
-					<image src="../../static/index/ico-nav-professor.png" mode=""></image>
-					<span>海外专家</span>
-				</view>
-				<view class="item" @click="toPhysiciansList('人际关系')">
-					<image src="../../static/index/ico-nav-friends.png" mode=""></image>
-					<span>人际关系</span>
-				</view>
-				<view class="item" @click="toPhysiciansList('心里健康')">
-					<image src="../../static/index/ico-nav-healthy.png" mode=""></image>
-					<span>心里健康</span>
-				</view>
-				<view class="item" @click="toPhysiciansList('全部')">
-					<image src="../../static/index/ico-nav-all.png" mode=""></image>
-					<span>全部</span>
-				</view>
-			</view>
-			<view class="hr"></view>
-			<view class="h4">心灵·广场</view>
-			<!-- 评论区 -->
-			<view class="comment">
-				<view class="tab">
-					<span v-for="(item,index) in catagery" :key="item.id" :class="{active:item.isCurent}"
-						@click="ckCatagery(item,index)">{{item.tittle}}</span>
-				</view>
-				<view v-if="curentCatagery!=2">
-					<comment v-for="item in catagery[curentCatagery].commentList" :key="item.id" :person='item'></comment>
-				</view>
-				<view v-if="curentCatagery===2">
-					<qs v-for="item in catagery[2].qsList" :qs="item" :key="item.id"></qs>
-				</view>
-			</view>
+			
 		</view>
-
+		
 	</view>
 </template>
 
 <script>
+	// 医师页面
+	import doctor from '../../component/doctor/doctor.vue';
+	// 评论组件
 	import comment from '../../component/commenttool/comfocous.vue';
 	// 问答评论组件
 	import qs from '../../component/commenttool/QS.vue';
@@ -117,6 +124,7 @@
 				title: 'Hello',
 				value: "",
 				search_placeholder: "焦虑测试",
+				isDoctor:false,
 				swiperImg: [{
 						url: "../../static/index/sj1.webp",
 						id: "swiperImg1"
@@ -376,12 +384,18 @@
 				],
 			}
 		},
-		onLoad() {
-
+		onShow() {
+			uni.getStorage({
+				key:"ydy-memberMes",
+			}).then((res)=>{
+				res[1].data.type==='doctor'&&(this.isDoctor=true)
+				res[1].data.type==='member'&&(this.isDoctor=false)
+			})
 		},
 		components: {
 			comment,
-			qs
+			qs,
+			doctor
 		},
 		methods: {
 			ckShowAll(person){

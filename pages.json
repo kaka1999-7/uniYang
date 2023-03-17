@@ -65,6 +65,15 @@
             }
             
         }
+        ,{
+            "path" : "component/doctor/doctor",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
@@ -99,7 +108,7 @@
 		"list": [
 			{
 				"name": "", //模式名称
-				// "path": "pages/communicate/communicate", //启动页面，必选
+				// "path": "pages/message/message", //启动页面，必选
 				"query": "" //启动参数，在页面的onLoad函数里面得到
 			}
 		]

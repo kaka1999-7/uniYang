@@ -22,7 +22,7 @@
 			return {
 				messageList:[{
 					aimAccount:"member001",
-					picture:"../../static/login/weibo.png",
+					picture:"../../static/person/1.jpg",
 					name:"【每日推送】",
 					tittle:"不得不工作的意义到底是啥？",
 					lastTime:"晚上 8:00"
@@ -30,14 +30,14 @@
 				},
 				{
 					aimAccount:"member002",
-					picture:"../../static/login/qq.png",
+					picture:"../../static/person/head1.jpg",
 					name:"杨大爷的qq",
 					tittle:"为了干饭啊",
 					lastTime:"晚上 12:00"
 				},
 				{
 					aimAccount:"member003",
-					picture:"../../static/login/wx.png",
+					picture:"../../static/person/head3.webp",
 					name:"杨大爷的微信",
 					tittle:"为了妹妹啊",
 					lastTime:"晚上 11:00"

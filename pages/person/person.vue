@@ -133,7 +133,7 @@
 				<span>语音</span>
 			</view>
 			<view class="consul-times">
-				<span>咨询方式</span>
+				<span>咨询次数</span>
 				<button>+</button>
 				<span>1</span>
 				<button>-</button>

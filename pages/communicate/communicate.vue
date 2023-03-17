@@ -2,28 +2,10 @@
 	<view class="container">
 		<view class="cancel-scroll">
 			<view class="content">
-				<view class="mes-item">
-					<image src="../../static/logo.png" mode=""></image>
+				<view class="mes-item" :class="{me:item.from==='me'}" v-for="item in aimMes.mes" :key="item.id" >
+					<image :src="item.headUrl" mode=""></image>
 					<span>
-						sdfaadafafafafasdfaadafafafafasdfaadafafafafasdfaadafafafafasdfaadafafafafasdfaadafafafafasdfaadafafafafasdfaadafafafafasdfaadafafafafasdfaadafafafafasdfaadafafafafasdfaadafafafafasdfaadafafafafasdfaadafafafafasdfaadafafafafasdfaadafafafafasdfaadafafafafasdfaadafafafafa
-					</span>
-				</view>
-				<view class="mes-item me">
-					<image src="../../static/person/head2.webp" mode=""></image>
-					<span>
-						大大发啊发发发发发发发发发大大发啊发发发发发发发发发大大发啊发发发发发发发发发大大发啊发发发发发发发发发大大发啊发发发发发发发发发大大发啊发发发发发发发发发大大发啊发发发发发发发发发大大发啊发发发发发发发发发大大发啊发发发发发发发发发
-					</span>
-				</view>
-				<view class="mes-item">
-					<image src="../../static/logo.png" mode=""></image>
-					<span>
-						大大发啊发发发发发发发发发大大发啊发发发发发发发发发大大发啊发发发发发发发发发大大发啊发发发发发发发发发大大发啊发发发发发发发发发大大发啊发发发发发发发发发大大发啊发发发发发发发发发大大发啊发发发发发发发发发大大发啊发发发发发发发发发
-					</span>
-				</view>
-				<view class="mes-item me">
-					<image src="../../static/person/head2.webp" mode=""></image>
-					<span>
-						大大发啊发发发发发发发发发大大发啊发发发发发发发发发大大发啊发发发发发发发发发大大发啊发发发发发发发发发大大发啊发发发发发发发发发大大发啊发发发发发发发发发大大发啊发发发发发发发发发大大发啊发发发发发发发发发大大发啊发发发发发发发发发
+						{{item.text}}
 					</span>
 				</view>
 			</view>
@@ -41,33 +23,118 @@
 				aimMes:{
 					name:"kaka",
 					account:"member100",
-					headUrl:"../../static/login/weibo.png",
-					mes:[
-						{
-							id:"mes1",
-							text:"你好啊！",
-							from:"adverse"
-						},
-						{
-							id:"mes2",
-							text:"我很好啊！",
-							from:'me'
-						}
-					]
 				},
 				value:"",
 				messageList:[{
 					account:"member001",
-					headUrl:"../../static/login/weibo.png",
+					picture:"../../static/person/1.jpg",
 					name:"【每日推送】",
 					tittle:"不得不工作的意义到底是啥？",
-					lastTime:"晚上 8:00"
+					lastTime:"晚上 8:00",
+					mes:[
+						{
+							id:"mes1",
+							text:"你好啊！",
+							from:"adverse",
+							headUrl:"../../static/person/1.jpg",
+						},
+						{
+							id:"mes2",
+							text:"我很好啊！",
+							from:'me',
+							headUrl:"../../static/person/head2.webp",
+						},
+						{
+							id:"mes3",
+							text:"牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙",
+							from:'adverse',
+							headUrl:"../../static/person/1.jpg",
+						},
+						{
+							id:"mes4",
+							text:"你也牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙",
+							from:'me',
+							headUrl:"../../static/person/head2.webp",
+						}
+					]
+				},
+				{
+					account:"member002",
+					picture:"../../static/person/head1.jpg",
+					name:"杨大爷的qq",
+					tittle:"为了干饭啊",
+					lastTime:"晚上 12:00",
+					mes:[
+						{
+							id:"mes1",
+							text:"哈哈哈！",
+							from:"adverse",
+							headUrl:"../../static/person/head1.jpg",
+						},
+						{
+							id:"mes2",
+							text:"哈哈哈哈哈哈哈哈哈哈哈哈！",
+							from:'me',
+							headUrl:"../../static/person/head2.webp",
+						},
+						{
+							id:"mes3",
+							text:"哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈",
+							from:'adverse',
+							headUrl:"../../static/person/head1.jpg",
+						},
+						{
+							id:"mes4",
+							text:"哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈",
+							from:'me',
+							headUrl:"../../static/person/head2.webp",
+						}
+					]
+				},
+				{
+					account:"member003",
+					picture:"../../static/person/head3.webp",
+					name:"杨大爷的微信",
+					tittle:"为了玩啊",
+					lastTime:"晚上 11:00",
+					mes:[
+						{
+							id:"mes1",
+							text:"呵呵！",
+							from:"adverse",
+							headUrl:"../../static/person/head3.webp",
+						},
+						{
+							id:"mes2",
+							text:"呵呵呵呵呵呵呵呵呵呵！",
+							from:'me',
+							headUrl:"../../static/person/head2.webp",
+						},
+						{
+							id:"mes3",
+							text:"呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵",
+							from:'adverse',
+							headUrl:"../../static/person/head3.webp",
+						},
+						{
+							id:"mes4",
+							text:"呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵",
+							from:'me',
+							headUrl:"../../static/person/head2.webp",
+						}
+					]
 				}]
 			}
 		},
 		onLoad(option) {
 			// this.aimMes=option
 			// console.log(option)
+			this.messageList.forEach(el=>{
+				if(el.account===option.account){
+					this.aimMes=el
+				}
+			})
+			// this.aimMes=this.aimMes?this.messageList[0]:this.aimMes
 			uni.setNavigationBarTitle({
 				title:this.aimMes.name
 			})
@@ -138,10 +205,11 @@
 	}
 	.content .mes-item span{
 		float: left;
-		width: 70%;
+		max-width: 70%;
 		margin-left: 15rpx;
 		padding: 20rpx;
 		word-wrap: break-word;
+		border-radius: 10rpx;
 		background-color: #ffffff;
 	}
 	.content .me image{

@@ -49,10 +49,11 @@
 }
 .content .mes-item ._span.data-v-fde57524{
 	float: left;
-	width: 70%;
+	max-width: 70%;
 	margin-left: 15rpx;
 	padding: 20rpx;
 	word-wrap: break-word;
+	border-radius: 10rpx;
 	background-color: #ffffff;
 }
 .content .me image.data-v-fde57524{
