@@ -1,5 +1,23 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["component/doctor/doctor"],{
 
+/***/ 137:
+/*!*******************************************************************************************************!*\
+  !*** C:/Users/ASUS/Hbuilder/HBuilderX/project/uniYang/main.js?{"page":"component%2Fdoctor%2Fdoctor"} ***!
+  \*******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 5);
+
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 4));
+var _doctor = _interopRequireDefault(__webpack_require__(/*! ./component/doctor/doctor.vue */ 19));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} // @ts-ignore
+wx.__webpack_require_UNI_MP_PLUGIN__ = __webpack_require__;createPage(_doctor.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
 /***/ 19:
 /*!************************************************************************************!*\
   !*** C:/Users/ASUS/Hbuilder/HBuilderX/project/uniYang/component/doctor/doctor.vue ***!
@@ -80,13 +98,13 @@ var components
 try {
   components = {
     uniEasyinput: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput */ "uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput.vue */ 110))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput */ "uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput.vue */ 160))
     },
     uniDataSelect: function() {
-      return Promise.all(/*! import() | uni_modules/uni-data-select/components/uni-data-select/uni-data-select */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-data-select/components/uni-data-select/uni-data-select")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-data-select/components/uni-data-select/uni-data-select.vue */ 117))
+      return Promise.all(/*! import() | uni_modules/uni-data-select/components/uni-data-select/uni-data-select */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-data-select/components/uni-data-select/uni-data-select")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-data-select/components/uni-data-select/uni-data-select.vue */ 167))
     },
     uniDatetimePicker: function() {
-      return Promise.all(/*! import() | uni_modules/uni-datetime-picker/components/uni-datetime-picker/uni-datetime-picker */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-datetime-picker/components/uni-datetime-picker/uni-datetime-picker")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-datetime-picker/components/uni-datetime-picker/uni-datetime-picker.vue */ 130))
+      return Promise.all(/*! import() | uni_modules/uni-datetime-picker/components/uni-datetime-picker/uni-datetime-picker */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-datetime-picker/components/uni-datetime-picker/uni-datetime-picker")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-datetime-picker/components/uni-datetime-picker/uni-datetime-picker.vue */ 177))
     }
   }
 } catch (e) {
@@ -267,7 +285,8 @@ var _uuid = _interopRequireDefault(__webpack_require__(/*! uuid */ 24));function
 //
 //
 //
-var _default = { data: function data() {return { tempLevel: '', tempTag: '', info: { name: "杨大爷", imgUrl: '../../static/index/sj2.webp', birthDay: "1950-1-1", sex: 1, city: "湖北省武汉市江夏区", level: [{ id: "level1", text: "一级心理咨询师" }, { id: "level2", text: "二级心理咨询师" }, { id: "level3", text: "三级心理咨询师" }, { id: "level4", text: "四级心理咨询师" }], tags: [{ id: 'tag1', text: "个人成长" }, { id: 'tag2', text: "恋爱心理" }, { id: 'tag3', text: "人际关系" }, { id: 'tag4', text: "婚姻家庭" }], time: [{ id: "time1", date: 26, part: ['全天', '上午', '', ''] }, { id: "time2", date: 27, part: ['全天', '上午', '', ''] }, { id: "time3",
+var _default = { data: function data() {return { tempLevel: '', tempTag: '', info: { name: "杨大爷", id: 'doctor01', imgUrl: '../../static/index/sj2.webp', birthDay: "1950-1-1", sex: 1, city: "湖北省武汉市江夏区", level: [{ id: "level1", text: "一级心理咨询师" }, { id: "level2", text: "二级心理咨询师" }, { id: "level3", text: "三级心理咨询师" }, { id: "level4", text: "四级心理咨询师" }], tags: [{ id: 'tag1', text: "个人成长" }, { id: 'tag2', text: "恋爱心理" }, { id: 'tag3', text: "人际关系" }, { id: 'tag4', text: "婚姻家庭" }], time: [{ id: "time1", date: 26, part: ['全天', '上午', '', ''] }, { id: "time2", date: 27, part: ['全天', '上午', '', ''] }, {
+          id: "time3",
           date: 28,
           part: ['全天', '上午', '', ''] },
 
@@ -277,6 +296,25 @@ var _default = { data: function data() {return { tempLevel: '', tempTag: '', inf
           part: ['全天', '上午', '', ''] }] } };
 
 
+
+  },
+  created: function created() {var _this = this;
+    // console.log('aa')
+    uni.getStorage({
+      key: "ydy-memberMes" }).
+    then(function (res) {
+      console.log();
+      uni.request({
+        url: _this.baseUrl + "doctor/doctorinfo",
+        data: {
+          account: res[1].data.account } }).
+
+      then(function (res) {
+        if (res[1] && res[1].data) {
+          _this.info = res[1].data;
+        }
+      });
+    });
 
   },
   methods: {
@@ -293,14 +331,14 @@ var _default = { data: function data() {return { tempLevel: '', tempTag: '', inf
       level && (this.tempLevel = "");
       level || (this.tempTag = "");
     },
-    upLoadImg: function upLoadImg() {var _this = this;
+    upLoadImg: function upLoadImg() {var _this2 = this;
       uni.chooseImage({
         count: 1,
         sourceType: ['album', 'camera'],
         success: function success(res) {
           // res.tempFilePaths[0] = res.tempFiles[0].path
           // this.info.imgUrl=res.tempFilePaths[0]
-          _this.info.imgUrl = res.tempFilePaths[0];
+          _this2.info.imgUrl = res.tempFilePaths[0];
         },
         complete: function complete() {
 
@@ -363,25 +401,7 @@ __webpack_require__.r(__webpack_exports__);
     if(false) { var cssReload; }
   
 
-/***/ }),
-
-/***/ 87:
-/*!*******************************************************************************************************!*\
-  !*** C:/Users/ASUS/Hbuilder/HBuilderX/project/uniYang/main.js?{"page":"component%2Fdoctor%2Fdoctor"} ***!
-  \*******************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 5);
-
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 4));
-var _doctor = _interopRequireDefault(__webpack_require__(/*! ./component/doctor/doctor.vue */ 19));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} // @ts-ignore
-wx.__webpack_require_UNI_MP_PLUGIN__ = __webpack_require__;createPage(_doctor.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
 /***/ })
 
-},[[87,"common/runtime","common/vendor"]]]);
+},[[137,"common/runtime","common/vendor"]]]);
 //# sourceMappingURL=../../../.sourcemap/mp-weixin/component/doctor/doctor.js.map

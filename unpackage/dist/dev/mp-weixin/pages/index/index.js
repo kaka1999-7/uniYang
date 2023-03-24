@@ -106,7 +106,7 @@ var components
 try {
   components = {
     uniIcons: function() {
-      return Promise.all(/*! import() | uni_modules/uni-icons/components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-icons/components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-icons/components/uni-icons/uni-icons.vue */ 88))
+      return Promise.all(/*! import() | uni_modules/uni-icons/components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-icons/components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-icons/components/uni-icons/uni-icons.vue */ 138))
     }
   }
 } catch (e) {
@@ -400,7 +400,7 @@ var _doctor = _interopRequireDefault(__webpack_require__(/*! ../../component/doc
 //
 //
 // 医师页面
-var comment = function comment() {__webpack_require__.e(/*! require.ensure | component/commenttool/comfocous */ "component/commenttool/comfocous").then((function () {return resolve(__webpack_require__(/*! ../../component/commenttool/comfocous.vue */ 96));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var qs = function qs() {__webpack_require__.e(/*! require.ensure | component/commenttool/QS */ "component/commenttool/QS").then((function () {return resolve(__webpack_require__(/*! ../../component/commenttool/QS.vue */ 103));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { data: function data() {return { title: 'Hello', value: "", search_placeholder: "焦虑测试", isDoctor: false, swiperImg: [{ url: "../../static/index/sj1.webp", id: "swiperImg1" }, { url: "../../static/index/sj2.webp", id: "swiperImg2" }, { url: "../../static/index/sj3.webp", id: "swiperImg3" }], curentCatagery: 0, catagery: [{ tittle: '关注', id: "catageryInt1", isCurent: true, commentList: [{ id: 'indperson1', name: "YT", tags: [{ tittle: 'lv9 倾听卡卡 ', id: 'indpersontag1' }, { tittle: '精华答主', id: 'indpersontag2' }], coment: '我坚信，有自信才能有成绩，有成绩就会更自信。如果说失败乃成功之母，那么自信就是成功之基。天并不都是蓝的，云并不都是白的，但自信的风采却是一束永恒的灿烂的恒久的光辉，这一束光辉将永远照着你的目标前进，不再迷茫。', showAll: false, imgHead: '../../static/index/sj2.webp', imgUrl: [{ url: '../../static/index/sj2.webp', id: 'personimg1' }, { url: '../../static/index/sj2.webp', id: 'personimg2' }], label: '我的日记', time: '24小时前' }, { id: 'indperson2', name: "杨大爷", tags: [{ tittle: 'lv100 倾听卡卡 ', id: 'indperson2tag1' }, { tittle: '精华答主', id: 'indperson2tag2' }], coment: '遇事能忍则忍，但要保留一份傲气，别让人一再践踏；擦亮你的眼睛，看清这个现实社会，有人笑里藏刀，有人背后使招。慢慢领悟，深深感触，愿你有眼力把这些都看透；渐渐成长，悄悄坚强，愿你有能力与生活握手言和。', showAll: false, imgHead: '../../static/index/sj1.webp', imgUrl: [{ url: '../../static/index/sj1.webp', id: 'person2img1' }, { url: '../../static/index/sj2.webp', id: 'person2img2' }], label: '我的日记', time: '24小时前' }] }, { tittle: '热门', id: "catageryInt2", isCurent: false, commentList: [{ id: 'indperson1', name: "YT", tags: [{ tittle: 'lv9 倾听卡卡 ', id: 'indpersontag1' }, { tittle: '精华答主', id: 'indpersontag2' }], coment: '我坚信，有自信才能有成绩，有成绩就会更自信。如果说失败乃成功之母，那么自信就是成功之基。天并不都是蓝的，云并不都是白的，但自信的风采却是一束永恒的灿烂的恒久的光辉，这一束光辉将永远照着你的目标前进，不再迷茫。', showAll: false, imgHead: '../../static/index/sj1.webp', imgUrl: [{ url: '../../static/index/sj1.webp', id: 'personimg1' }, { url: '../../static/index/sj3.webp', id: 'personimg2' }], label: '我的日记',
+var comment = function comment() {__webpack_require__.e(/*! require.ensure | component/commenttool/comfocous */ "component/commenttool/comfocous").then((function () {return resolve(__webpack_require__(/*! ../../component/commenttool/comfocous.vue */ 146));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var qs = function qs() {__webpack_require__.e(/*! require.ensure | component/commenttool/QS */ "component/commenttool/QS").then((function () {return resolve(__webpack_require__(/*! ../../component/commenttool/QS.vue */ 153));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { data: function data() {return { title: 'Hello', value: "", search_placeholder: "焦虑测试", isDoctor: false, swiperImg: [{ url: "../../static/index/sj1.webp", id: "swiperImg1" }, { url: "../../static/index/sj2.webp", id: "swiperImg2" }, { url: "../../static/index/sj3.webp", id: "swiperImg3" }], curentCatagery: 0, catagery: [{ tittle: '关注', id: "catageryInt1", isCurent: true, commentList: [{ id: 'indperson1', name: "YT", tags: [{ tittle: 'lv9 倾听卡卡 ', id: 'indpersontag1' }, { tittle: '精华答主', id: 'indpersontag2' }], coment: '我坚信，有自信才能有成绩，有成绩就会更自信。如果说失败乃成功之母，那么自信就是成功之基。天并不都是蓝的，云并不都是白的，但自信的风采却是一束永恒的灿烂的恒久的光辉，这一束光辉将永远照着你的目标前进，不再迷茫。', showAll: false, imgHead: '../../static/index/sj2.webp', imgUrl: [{ url: '../../static/index/sj2.webp', id: 'personimg1' }, { url: '../../static/index/sj2.webp', id: 'personimg2' }], label: '我的日记', time: '24小时前' }, { id: 'indperson2', name: "杨大爷", tags: [{ tittle: 'lv100 倾听卡卡 ', id: 'indperson2tag1' }, { tittle: '精华答主', id: 'indperson2tag2' }], coment: '遇事能忍则忍，但要保留一份傲气，别让人一再践踏；擦亮你的眼睛，看清这个现实社会，有人笑里藏刀，有人背后使招。慢慢领悟，深深感触，愿你有眼力把这些都看透；渐渐成长，悄悄坚强，愿你有能力与生活握手言和。', showAll: false, imgHead: '../../static/index/sj1.webp', imgUrl: [{ url: '../../static/index/sj1.webp', id: 'person2img1' }, { url: '../../static/index/sj2.webp', id: 'person2img2' }], label: '我的日记', time: '24小时前' }] }, { tittle: '热门', id: "catageryInt2", isCurent: false, commentList: [{ id: 'indperson1', name: "YT", tags: [{ tittle: 'lv9 倾听卡卡 ', id: 'indpersontag1' }, { tittle: '精华答主', id: 'indpersontag2' }], coment: '我坚信，有自信才能有成绩，有成绩就会更自信。如果说失败乃成功之母，那么自信就是成功之基。天并不都是蓝的，云并不都是白的，但自信的风采却是一束永恒的灿烂的恒久的光辉，这一束光辉将永远照着你的目标前进，不再迷茫。', showAll: false, imgHead: '../../static/index/sj1.webp', imgUrl: [{ url: '../../static/index/sj1.webp', id: 'personimg1' }, { url: '../../static/index/sj3.webp', id: 'personimg2' }], label: '我的日记',
           time: '24小时前' }] },
 
 
@@ -668,13 +668,13 @@ var components
 try {
   components = {
     uniEasyinput: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput */ "uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput.vue */ 110))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput */ "uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput.vue */ 160))
     },
     uniDataSelect: function() {
-      return Promise.all(/*! import() | uni_modules/uni-data-select/components/uni-data-select/uni-data-select */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-data-select/components/uni-data-select/uni-data-select")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-data-select/components/uni-data-select/uni-data-select.vue */ 117))
+      return Promise.all(/*! import() | uni_modules/uni-data-select/components/uni-data-select/uni-data-select */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-data-select/components/uni-data-select/uni-data-select")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-data-select/components/uni-data-select/uni-data-select.vue */ 167))
     },
     uniDatetimePicker: function() {
-      return Promise.all(/*! import() | uni_modules/uni-datetime-picker/components/uni-datetime-picker/uni-datetime-picker */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-datetime-picker/components/uni-datetime-picker/uni-datetime-picker")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-datetime-picker/components/uni-datetime-picker/uni-datetime-picker.vue */ 130))
+      return Promise.all(/*! import() | uni_modules/uni-datetime-picker/components/uni-datetime-picker/uni-datetime-picker */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-datetime-picker/components/uni-datetime-picker/uni-datetime-picker")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-datetime-picker/components/uni-datetime-picker/uni-datetime-picker.vue */ 177))
     }
   }
 } catch (e) {
@@ -853,7 +853,8 @@ var _uuid = _interopRequireDefault(__webpack_require__(/*! uuid */ 24));function
 //
 //
 //
-var _default = { data: function data() {return { tempLevel: '', tempTag: '', info: { name: "杨大爷", imgUrl: '../../static/index/sj2.webp', birthDay: "1950-1-1", sex: 1, city: "湖北省武汉市江夏区", level: [{ id: "level1", text: "一级心理咨询师" }, { id: "level2", text: "二级心理咨询师" }, { id: "level3", text: "三级心理咨询师" }, { id: "level4", text: "四级心理咨询师" }], tags: [{ id: 'tag1', text: "个人成长" }, { id: 'tag2', text: "恋爱心理" }, { id: 'tag3', text: "人际关系" }, { id: 'tag4', text: "婚姻家庭" }], time: [{ id: "time1", date: 26, part: ['全天', '上午', '', ''] }, { id: "time2", date: 27, part: ['全天', '上午', '', ''] }, { id: "time3",
+var _default = { data: function data() {return { tempLevel: '', tempTag: '', info: { name: "杨大爷", id: 'doctor01', imgUrl: '../../static/index/sj2.webp', birthDay: "1950-1-1", sex: 1, city: "湖北省武汉市江夏区", level: [{ id: "level1", text: "一级心理咨询师" }, { id: "level2", text: "二级心理咨询师" }, { id: "level3", text: "三级心理咨询师" }, { id: "level4", text: "四级心理咨询师" }], tags: [{ id: 'tag1', text: "个人成长" }, { id: 'tag2', text: "恋爱心理" }, { id: 'tag3', text: "人际关系" }, { id: 'tag4', text: "婚姻家庭" }], time: [{ id: "time1", date: 26, part: ['全天', '上午', '', ''] }, { id: "time2", date: 27, part: ['全天', '上午', '', ''] }, {
+          id: "time3",
           date: 28,
           part: ['全天', '上午', '', ''] },
 
@@ -863,6 +864,25 @@ var _default = { data: function data() {return { tempLevel: '', tempTag: '', inf
           part: ['全天', '上午', '', ''] }] } };
 
 
+
+  },
+  created: function created() {var _this = this;
+    // console.log('aa')
+    uni.getStorage({
+      key: "ydy-memberMes" }).
+    then(function (res) {
+      console.log();
+      uni.request({
+        url: _this.baseUrl + "doctor/doctorinfo",
+        data: {
+          account: res[1].data.account } }).
+
+      then(function (res) {
+        if (res[1] && res[1].data) {
+          _this.info = res[1].data;
+        }
+      });
+    });
 
   },
   methods: {
@@ -879,14 +899,14 @@ var _default = { data: function data() {return { tempLevel: '', tempTag: '', inf
       level && (this.tempLevel = "");
       level || (this.tempTag = "");
     },
-    upLoadImg: function upLoadImg() {var _this = this;
+    upLoadImg: function upLoadImg() {var _this2 = this;
       uni.chooseImage({
         count: 1,
         sourceType: ['album', 'camera'],
         success: function success(res) {
           // res.tempFilePaths[0] = res.tempFiles[0].path
           // this.info.imgUrl=res.tempFilePaths[0]
-          _this.info.imgUrl = res.tempFilePaths[0];
+          _this2.info.imgUrl = res.tempFilePaths[0];
         },
         complete: function complete() {
 

@@ -64,6 +64,7 @@
 				tempTag: '',
 				info: {
 					name: "杨大爷",
+					id:'doctor01',
 					imgUrl: '../../static/index/sj2.webp',
 					birthDay: "1950-1-1",
 					sex: 1,
@@ -124,6 +125,25 @@
 					}],
 				},
 			}
+		},
+		created() {
+			// console.log('aa')
+			uni.getStorage({
+				key:"ydy-memberMes"
+			}).then(res=>{
+				console.log()
+				uni.request({
+					url:this.baseUrl+"doctor/doctorinfo",
+					data:{
+						account:res[1].data.account
+					}
+				}).then((res)=>{
+					if(res[1]&&res[1].data){
+						this.info=res[1].data
+					}
+				})
+			})
+			
 		},
 		methods: {
 			// 添加职业职称

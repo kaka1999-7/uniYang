@@ -40,7 +40,7 @@
 			</view>
 			<scroll-view class="tag" scroll-x="true" @scroll="scroll" :show-scrollbar='false' scroll-left="0">
 				<view class=" tag-item" v-for="item in tags" :key="item.id" :class="{active:item.isCurent}"
-					@click="ckItem(item,tags)">{{item.tittle}}</view>
+					@click="ckItem(item,tags);ckTag(item.tittle)">{{item.tittle}}</view>
 			</scroll-view>
 			<!-- 详细选项卡 -->
 			<view class="ct" :class="{hidden:curentCatagery>=5}">
@@ -147,6 +147,7 @@
 
 <script>
 	import Person from "../../component/physiciansList/card.vue"
+	import axios from 'axios'
 	export default {
 		data() {
 			return {
@@ -157,7 +158,8 @@
 					price: [],
 					time: [],
 					sort: "",
-					otherfilter: []
+					tag:"全部",
+					filter: []
 				},
 				scrollTop: 0,
 				old: {
@@ -209,7 +211,7 @@
 						isCurent: false
 					}
 				],
-				catagery: [{
+				catagery : [{
 						tittle: "城市",
 						isCurent: false,
 						id: 'catagery1',
@@ -431,10 +433,10 @@
 									}
 								]
 							},
-
+				
 						],
-
-
+				
+				
 					},
 					{
 						tittle: "价格",
@@ -564,7 +566,7 @@
 						isCurent: false,
 						id: 'catagery5',
 						filterList: [{
-								id: "filter1",
+								id: "sex",
 								tittle: "咨询师性别",
 								filterItem: [{
 										tittle: '不限',
@@ -581,7 +583,7 @@
 								]
 							},
 							{
-								id: "filter2",
+								id: "consulGroup",
 								tittle: "咨询群体",
 								filterItem: [{
 										tittle: '不限',
@@ -596,7 +598,7 @@
 										isCurent: false,
 									},
 									{
-										tittle: '亲少年',
+										tittle: '青少年',
 										isCurent: false,
 									},
 									{
@@ -630,7 +632,7 @@
 								]
 							},
 							{
-								id: "filter3",
+								id: "accpetType",
 								tittle: "咨询方式",
 								filterItem: [{
 										tittle: '不限',
@@ -651,7 +653,7 @@
 								]
 							},
 							{
-								id: "filter4",
+								id: "sketchyAge",
 								tittle: "咨询师年龄",
 								filterItem: [{
 										tittle: '不限',
@@ -678,18 +680,21 @@
 						]
 					}
 				],
+				
 				curentCatagery: 1000,
-				// defaultPersonList:[],
-				originPersonList: [{
+				originPersonList : [{
 						id: 'person0',
 						name: '杨大爷',
 						experienc: '从业18年 · 1000000+人咨询',
 						consultPeople: 1000000,
 						price: 300,
 						accpetType: ['视频', '语音', '面对面'],
-						tagList: ['海外专家', '职场发展', '情绪管理', '个人成长', '心里健康', '人际关系', '婚姻家庭', '恋爱情感', '情绪压力', '亲子教育',
-							'性心理', '家庭关系'
+						tagList: ['海外专家', '职场发展', '情绪管理', '个人成长', '心里健康', '人际关系', '婚姻家庭', '恋爱情感', '情绪压力', '亲子教育', '性心理',
+							'家庭关系'
 						],
+						sex: '男',
+						consulGroup: ['老人', "儿童", "青少年"],
+						sketchyAge: '90后',
 						timeList: [{
 								id: "time1",
 								date: 1,
@@ -730,28 +735,21 @@
 						tags: "婚姻家庭 | 个人成长 | 亲子教育",
 						location: '四川省广安市前锋区',
 						headUrl: "../../static/physiciansList/head2.webp",
-						tagList: ['海外专家', '职场发展', '情绪管理', '个人成长', 
-						],
+						tagList: ['海外专家', '职场发展', '情绪管理', '个人成长'],
+						sex: '女',
+						accpetType: ['视频', '语音'],
+						consulGroup: ['中年人', "学生"],
+						sketchyAge: '80后',
 						timeList: [{
-								id: "time1",
-								date: 26,
-								part: ['全天', '上午', '下午', '']
-							},
-							{
 								id: "time2",
-								date: 27,
+								date: 5,
 								part: ['全天', '上午', '', '']
 							},
 							{
-								id: "time3",
-								date: 28,
+								id: "time1",
+								date: 6,
 								part: ['全天', '上午', '', '']
 							},
-							{
-								id: "time4",
-								date: 29,
-								part: ['全天', '上午', '', '']
-							}
 						],
 						activities: [{
 								tittle: '满减活动',
@@ -780,6 +778,9 @@
 						headUrl: "../../static/physiciansList/head1.jpg",
 						accpetType: ['语音', '面对面'],
 						tagList: ['心里健康', '人际关系', '婚姻家庭', '家庭关系'],
+						sex: '男',
+						consulGroup: ['职场人', "第三者"],
+						sketchyAge: '70后',
 						timeList: [{
 								id: "time1",
 								date: 3,
@@ -817,23 +818,15 @@
 						location: '湖北省武汉市江夏区',
 						headUrl: "../../static/physiciansList/1.jpg",
 						accpetType: ['语音', '面对面'],
-						tagList: ['恋爱情感', '情绪压力', '亲子教育','性心理'],
+						tagList: ['恋爱情感', '情绪压力', '亲子教育', '性心理'],
+						sex: '女',
+						consulGroup: ['孕妇', "夫妻", "LGBTQ"],
+						sketchyAge: '60后',
 						timeList: [{
-								id: "time1",
-								date: 5,
-								part: ['', '上午', '下午', '']
-							},
-							{
-								id: "time2",
-								date: 6,
-								part: ['全天', '', '', '']
-							},
-							{
-								id: "time3",
-								date: 7,
-								part: ['全天', '', '', '']
-							}
-						],
+							id: "time3",
+							date: 7,
+							part: ['全天', '', '', '']
+						}],
 						activities: [{
 								tittle: '满减活动',
 								id: 'person3act1'
@@ -850,180 +843,51 @@
 						comment: "情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理"
 					},
 				],
-				personList: [{
-						id: 'person0',
-						name: '杨大爷',
-						experienc: '从业18年 · 1000000+人咨询',
-						consultPeople: 1000000,
-						price: 300,
-						accpetType: ['视频', '语音', '面对面'],
-						tagList: ['海外专家', '职场发展', '情绪管理', '个人成长', '心里健康', '人际关系', '婚姻家庭', '恋爱情感', '情绪压力', '亲子教育',
-							'性心理', '家庭关系'
-						],
-						timeList: [{
-								id: "time1",
-								date: 1,
-								part: ['全天', '', '', '']
-							},
-							{
-								id: "time2",
-								date: 2,
-								part: ['', '上午', '', '']
-							},
-						],
-						level: '宇宙级心里医师',
-						tags: "情绪管理 | 个人成长 | 心里健康",
-						location: '四川省广安市广安区',
-						headUrl: "../../static/physiciansList/head3.webp",
-						activities: [{
-								tittle: '满减活动',
-								id: 'person0act1'
-							},
-							{
-								tittle: '今日报价',
-								id: 'person0act2'
-							},
-							{
-								tittle: '预沟通',
-								id: 'person0act3'
-							}
-						],
-						comment: "情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理"
-					},
-					{
-						id: 'person1',
-						name: '杨二爷',
-						experienc: '从业1000年 · 10000+人咨询',
-						consultPeople: 10000,
-						price: 500,
-						level: '宇宙级心里医师',
-						tags: "婚姻家庭 | 个人成长 | 亲子教育",
-						location: '四川省广安市前锋区',
-						headUrl: "../../static/physiciansList/head2.webp",
-						tagList: ['海外专家', '职场发展', '情绪管理', '个人成长', 
-						],
-						timeList: [{
-								id: "time1",
-								date: 26,
-								part: ['全天', '上午', '下午', '']
-							},
-							{
-								id: "time2",
-								date: 27,
-								part: ['全天', '上午', '', '']
-							},
-							{
-								id: "time3",
-								date: 28,
-								part: ['全天', '上午', '', '']
-							},
-							{
-								id: "time4",
-								date: 29,
-								part: ['全天', '上午', '', '']
-							}
-						],
-						activities: [{
-								tittle: '满减活动',
-								id: 'person1act1'
-							},
-							{
-								tittle: '今日报价',
-								id: 'person1act2'
-							},
-							{
-								tittle: '预沟通',
-								id: 'person1act3'
-							}
-						],
-						comment: "情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理"
-					},
-					{
-						id: 'person2',
-						name: '杨三爷',
-						experienc: '从业10年 · 10+人咨询',
-						consultPeople: 10,
-						price: 100,
-						level: '宇宙级心里医师',
-						tags: "心里健康 | 人际关系 | 家庭关系",
-						location: '湖北省武汉市江汉区',
-						headUrl: "../../static/physiciansList/head1.jpg",
-						accpetType: ['语音', '面对面'],
-						tagList: ['心里健康', '人际关系', '婚姻家庭', '家庭关系'],
-						timeList: [{
-								id: "time1",
-								date: 3,
-								part: ['', '上午', '', '']
-							},
-							{
-								id: "time2",
-								date: 4,
-								part: ['全天', '', '', '']
-							}
-						],
-						activities: [{
-								tittle: '满减活动',
-								id: 'person2act1'
-							},
-							{
-								tittle: '今日报价',
-								id: 'person2act2'
-							},
-							{
-								tittle: '预沟通',
-								id: 'person2act3'
-							}
-						],
-						comment: "情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理"
-					},
-					{
-						id: 'person3',
-						name: '杨四爷',
-						experienc: '从业1000年 · 900+人咨询',
-						consultPeople: 900,
-						price: 700,
-						level: '宇宙级心里医师',
-						tags: "恋爱情感 | 情绪压力 | 亲子教育",
-						location: '湖北省武汉市江夏区',
-						headUrl: "../../static/physiciansList/1.jpg",
-						accpetType: ['语音', '面对面'],
-						tagList: ['恋爱情感', '情绪压力', '亲子教育','性心理'],
-						timeList: [{
-								id: "time1",
-								date: 5,
-								part: ['', '上午', '下午', '']
-							},
-							{
-								id: "time2",
-								date: 6,
-								part: ['全天', '', '', '']
-							},
-							{
-								id: "time3",
-								date: 7,
-								part: ['全天', '', '', '']
-							}
-						],
-						activities: [{
-								tittle: '满减活动',
-								id: 'person3act1'
-							},
-							{
-								tittle: '今日报价',
-								id: 'person3act2'
-							},
-							{
-								tittle: '预沟通',
-								id: 'person3act3'
-							}
-						],
-						comment: "情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理情绪管理"
-					},
-				],
+				personList:[],
 				}
 		},
+		created() {
+			// 适应h5请求
+			uni.request({
+				method:"get",
+				url:this.baseUrl+'physicians/catagery'
+			}).then(res=>{
+				if(res[1]&&res[1].data){
+					this.catagery=res[1].data
+				}
+			})
+			
+			uni.request({
+				method:"get",
+				url:this.baseUrl+'physicians/personlist'
+			}).then(res=>{
+				if(res[1]&&res[1].data){
+					this.originPersonList=res[1].data
+				}
+				this.personList=JSON.parse(JSON.stringify(this.originPersonList))
+			})
+		},
 		onLoad(options) {
-			this.option = options
+			// this.option = options
+			// uni.request({
+			// 	method:"get",
+			// 	url:this.baseUrl+'physicians/catagery'
+			// }).then(res=>{
+			// 	if(res[1]&&res[1].data){
+			// 		this.catagery=res[1].data
+			// 	}
+			// })
+			
+			// uni.request({
+			// 	method:"get",
+			// 	url:this.baseUrl+'physicians/personlist'
+			// }).then(res=>{
+			// 	if(res[1]&&res[1].data){
+			// 		this.originPersonList=res[1].data
+			// 	}
+			// 	this.personList=JSON.parse(JSON.stringify(this.originPersonList))
+			// })
+			
 		},
 		components: {
 			Person
@@ -1034,6 +898,10 @@
 				uni.navigateTo({
 					url: `/pages/person/person?id=${item.id}`
 				})
+			},
+			ckTag(tag){
+				this.filter.tag=tag
+				this.filterArr()
 			},
 			// 生成过滤列表
 			filterArr() {
@@ -1068,7 +936,27 @@
 						return exit
 					})
 				}
-
+				// 时间筛选
+				if(this.filter.time.length>0){
+					this.personList=this.personList.filter(el=>{
+						let flag=false
+						el.timeList.forEach(el=>{
+							this.filter.time.forEach(e=>{
+								if(el.date===e.date&&el.part[0]==='全天'){
+									flag=true
+								}
+								if(el.date===e.date&&el.part[0]===""){
+									for(let i=0;i<el.part.length;i++ ){
+										(e.part.join("").indexOf(el.part[i])>=0&&el.part[i]!="")&&(flag=true);
+									}
+								}
+							})
+						})
+						return flag
+					})
+					this.filter.time=[]
+				}
+				
 				// 排序
 				if (this.filter.sort != "") {
 					if (this.filter.sort === '默认排序') {
@@ -1083,9 +971,48 @@
 						temp.sort((el1, el2) => (el2.consultPeople - el1.consultPeople))
 						this.personList = temp
 					}
-
 				}
-
+				// 医师标签筛选
+				if(this.filter.tag!=""){
+					if(this.filter.tag!='全部'){
+						this.personList=this.personList.filter(el=>{
+							if(el.tagList.join("").indexOf(this.filter.tag)>=0){
+								return true
+							}
+							return false
+						})
+					}
+				}
+				
+				// 各种筛选
+				if(this.filter.filter.length>0){
+					
+					
+					this.personList=this.personList.filter(el=>{
+						let flag=true
+						this.filter.filter.forEach(e=>{
+							if(e.filter!='不限'){
+								let ckstr=""
+								let str=""
+								if(Object.prototype.toString.call(el[e.id]).indexOf("Array")>=0){
+									str=el[e.id].join("")
+								}else{
+									str=el[e.id]
+								}
+								if(Object.prototype.toString.call(e.filter).indexOf("Array")>=0){
+									ckstr=e.filter.join("")
+								}else{
+									ckstr=e.filter
+								}
+								if(str.indexOf(ckstr)<0){
+									flag=false
+								}
+							}
+						})
+						return flag
+					})
+					this.filter.filter=[]
+				}
 			},
 			// 获取城市过滤参数
 			cityFilter(type) {
@@ -1150,6 +1077,39 @@
 				if (type === 'nolimitcity') {
 					this.catagery[0].provinceList.forEach(el => el.isCurent = false)
 					this.filter.location = ["", "", ""]
+				}
+				if (type === 'time') {
+					this.catagery[2].dateList.forEach(el => {
+						if(el.isCurent){
+							this.filter.time.push({
+								date:el.date
+							})
+						}
+					})
+					var temp=[]
+					this.catagery[2].partList.forEach(el => {
+						if(el.isCurent){
+							temp.push(el.tittle)
+						}else{
+							temp.push("")
+						}
+					})
+					this.filter.time.forEach(e=>{
+						e.part=temp
+					})
+					console.log(this.filter.time)
+				}
+				if(type==='filter'){
+					this.catagery[4].filterList.forEach(el=>{
+						el.filterItem.forEach(e=>{
+							if(e.isCurent){
+								this.filter.filter.push({
+									id:el.id,
+									filter:e.tittle
+								})
+							}
+						})
+					})
 				}
 				this.filterArr()
 

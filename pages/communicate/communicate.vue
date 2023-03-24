@@ -1,14 +1,22 @@
 <template>
 	<view class="container">
-		<view class="cancel-scroll">
-			<view class="content">
-				<view class="mes-item" :class="{me:item.from==='me'}" v-for="item in aimMes.mes" :key="item.id" >
+		<view class="cancel-scroll" >
+			<!-- <view class="content" id="content" ref="abc">
+				<view class="mes-item" :class="{me:item.from===myAccount.account}" v-for="item in aimMes.mes" :key="item.id" >
 					<image :src="item.headUrl" mode=""></image>
 					<span>
 						{{item.text}}
 					</span>
 				</view>
-			</view>
+			</view> -->
+			<scroll-view class="content" :scroll-top="scrollTop" :show-scrollbar="false" scroll-y="true" >
+				<view class="mes-item" :class="{me:item.from===myAccount.account}" v-for="item in aimMes.mes" :key="item.id" >
+					<image :src="item.headUrl" mode=""></image>
+					<span>
+						{{item.text}}
+					</span>
+				</view>
+			</scroll-view>
 		</view>
 		<view class="input-box">
 			<uni-easyinput type="textarea" maxlength="-1"  suffixIcon="paperplane-filled" @iconClick="sendMes" v-model="value" placeholder="请输入内容"></uni-easyinput>
@@ -17,144 +25,176 @@
 </template>
 
 <script>
+	import uuid from 'uuid'
 	export default {
 		data() {
 			return {
+				scrollTop:0,
 				aimMes:{
 					name:"kaka",
 					account:"member100",
 				},
+				aimAccount:"",
+				myAccount:{},
 				value:"",
-				messageList:[{
-					account:"member001",
-					picture:"../../static/person/1.jpg",
-					name:"【每日推送】",
-					tittle:"不得不工作的意义到底是啥？",
-					lastTime:"晚上 8:00",
-					mes:[
-						{
-							id:"mes1",
-							text:"你好啊！",
-							from:"adverse",
-							headUrl:"../../static/person/1.jpg",
-						},
-						{
-							id:"mes2",
-							text:"我很好啊！",
-							from:'me',
-							headUrl:"../../static/person/head2.webp",
-						},
-						{
-							id:"mes3",
-							text:"牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙",
-							from:'adverse',
-							headUrl:"../../static/person/1.jpg",
-						},
-						{
-							id:"mes4",
-							text:"你也牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙牛蛙",
-							from:'me',
-							headUrl:"../../static/person/head2.webp",
-						}
-					]
-				},
-				{
-					account:"member002",
-					picture:"../../static/person/head1.jpg",
-					name:"杨大爷的qq",
-					tittle:"为了干饭啊",
-					lastTime:"晚上 12:00",
-					mes:[
-						{
-							id:"mes1",
-							text:"哈哈哈！",
-							from:"adverse",
-							headUrl:"../../static/person/head1.jpg",
-						},
-						{
-							id:"mes2",
-							text:"哈哈哈哈哈哈哈哈哈哈哈哈！",
-							from:'me',
-							headUrl:"../../static/person/head2.webp",
-						},
-						{
-							id:"mes3",
-							text:"哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈",
-							from:'adverse',
-							headUrl:"../../static/person/head1.jpg",
-						},
-						{
-							id:"mes4",
-							text:"哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈",
-							from:'me',
-							headUrl:"../../static/person/head2.webp",
-						}
-					]
-				},
-				{
-					account:"member003",
-					picture:"../../static/person/head3.webp",
-					name:"杨大爷的微信",
-					tittle:"为了玩啊",
-					lastTime:"晚上 11:00",
-					mes:[
-						{
-							id:"mes1",
-							text:"呵呵！",
-							from:"adverse",
-							headUrl:"../../static/person/head3.webp",
-						},
-						{
-							id:"mes2",
-							text:"呵呵呵呵呵呵呵呵呵呵！",
-							from:'me',
-							headUrl:"../../static/person/head2.webp",
-						},
-						{
-							id:"mes3",
-							text:"呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵",
-							from:'adverse',
-							headUrl:"../../static/person/head3.webp",
-						},
-						{
-							id:"mes4",
-							text:"呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵",
-							from:'me',
-							headUrl:"../../static/person/head2.webp",
-						}
-					]
-				}]
-			}
+				platform:"",
+				wsIsReady:false,
+				ws:{},
+				websoketIsReady:false,
+				messageList:[]
+				}
 		},
 		onLoad(option) {
-			// this.aimMes=option
-			// console.log(option)
-			this.messageList.forEach(el=>{
-				if(el.account===option.account){
-					this.aimMes=el
-				}
+			// 回滚到聊天底部
+			setTimeout(()=>{this.scrollTop=50000},600)
+			// 进入页面打开soket
+			if(uni.getSystemInfoSync().platform==='devtools'){
+				this.platform=uni.getSystemInfoSync().platform
+			uni.connectSocket({
+				url:'ws://localhost:8787',
+				
 			})
+			uni.onSocketOpen(function (res) {
+			  console.log('WebSocket连接已打开！');
+			 
+			});
+			uni.onSocketClose(function (res) {
+			  console.log('WebSocket 已关闭！');
+			});
+			uni.onSocketMessage((res)=>{
+				// console.log('sss')
+				let data=JSON.parse(res.data)
+				this.aimMes.mes.push(data)
+				// console.log(this.aimMes.mes)
+				setTimeout(()=>{this.scrollTop+=10},600)
+				// this.scrollBottom()
+			  // console.log('收到服务器内容：' + res.data);
+			});
+			
+			}else{    //其他平台使用原生websocket
+				var ws = new WebSocket('ws://localhost:8787');
+				this.ws=ws
+				ws.onopen = (e)=>{
+					this.wsIsReady=true
+				    console.log("连接服务器成功");
+					// console.log(this.wsIsReady)
+				}
+				 ws.onmessage=(res)=>{
+					 let data=JSON.parse(res.data)
+					 this.aimMes.mes.push(data)
+					 setTimeout(()=>{this.scrollTop+=10},600)
+					 // this.scrollBottom()
+					 // console.log(this)
+				 }
+				 ws.onclose = (e)=>{
+					 // this.wsIsReady=false
+				     console.log("服务器关闭");
+				 }
+				 
+				 ws.onerror = function(){
+				     console.log("连接出错");
+				 }
+				 
+			}
+			this.aimAccount=option.account
+			
+			
 			// this.aimMes=this.aimMes?this.messageList[0]:this.aimMes
-			uni.setNavigationBarTitle({
-				title:this.aimMes.name
+			this.$nextTick(e=>{
+				uni.setNavigationBarTitle({
+					title:this.aimMes.name
+				})
+				// 链接websocket
+				if(this.platform==='devtools')
+				{
+					uni.sendSocketMessage({
+						data:this.myAccount.account,
+					})
+				}else{
+					 // 请求注册链接
+					 let interval=setInterval(()=>{
+						console.log(this.wsIsReady)
+						 if(this.wsIsReady){
+							 this.ws.send(this.myAccount.account);
+							 clearInterval(interval)
+						 }
+					 },500)
+				}
 			})
 			uni.getStorage({
 				key:"ydy-memberMes"
 			}).then(res=>{
 				if(res&&res[1]){
-					console.log(res[1].data)
+					this.myAccount=res[1].data
+					// console.log(res[1].data.account,option.account)
+					uni.request({		//请求数据
+						url:this.baseUrl+"communicate",
+						data:{
+							account:res[1].data.account,
+							aimAccount:option.account
+						}
+					}).then(res=>{
+						if(res[1]&&res[1].data){
+							this.aimMes=res[1].data
+						}
+					})
+					
+					// uni.request({		//适应h5的请求
+					// 	url:"/api/communicate",
+					// 	data:{
+					// 		account:res[1].data.account,
+					// 		aimAccount:option.account
+					// 	}
+					// }).then(res=>{
+					// 	if(res[1]&&res[1].data){
+					// 		// console.log(res[1])
+					// 		this.aimMes=res[1].data
+					// 	}
+					// })
+					
 				}
 			})
 		},
+		// 退出聊天关闭soket
+		beforeDestroy() {
+			uni.closeSocket();
+			if(this.wsIsReady){
+				this.ws.close()
+				this.wsIsReady=false
+			}
+		},
 		methods: {
+			// 发送消息
 			sendMes(){
-				
+				let id=uuid.v1()
+				let data={
+					id,
+					text:this.value,
+					from:this.myAccount.account,
+					headUrl:this.myAccount.headUrl
+				}
+				this.aimMes.mes.push(data)
+				// console.log(this.aimAccount)
+				let sendMes={
+					data,
+					aimAccount:this.aimAccount
+				}
+				this.value=""
+				if(this.platform==='devtools'){
+					uni.sendSocketMessage({
+					data:JSON.stringify(sendMes)
+				})
+				}else{
+					this.ws.send(JSON.stringify(sendMes))
+				}
+				setTimeout(()=>{this.scrollTop+=10},600)
 			}
 		}
 	}
 </script>
 
 <style scoped>
+	/* */
 	.container{
 		width: 100%;
 		min-height: 100vh;
@@ -162,6 +202,8 @@
 		background-color: #fafafa;
 	}
 	.input-box{
+		/* border: 1rpx solid red; */
+		height: 16vh;
 		width: 100%;
 		position: fixed;
 		bottom: 2rpx;
@@ -172,10 +214,14 @@
 	.content{
 		margin: 10rpx;
 		margin-bottom: 25%;
+		box-sizing: border-box;
 		position: relative;
+		height: 84vh;
+		left: -10rpx;
 		/* border: 1rpx solid red; */
-		padding: 10rpx;
-		overflow-y: auto;
+		padding: 10rpx 15rpx;
+		/* border: 1rpx chocolate solid; */
+		/* overflow-y: auto; */
 	}
 	.cancel-scroll {
 		overflow: hidden;

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user1</title>
+    <style>
+        #mes{
+            width: 300px;
+            height: 300px;
+            border: 1px solid #666;
+            overflow: auto;
+            margin-bottom:10px;
+            padding: 5px;
+        }
+        li{
+            text-decoration: none;
+            background: #f4f4f4;
+            padding: 5px;
+            margin-top: 5px;
+        }
+        .tl{
+            color: red;
+            text-align: left;
+        }
+        .tr{
+            color: green;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <ul id="mes"></ul>
+    <div class="kuang">
+        <input type="text" value="" class="int">
+        <button class="send">发送</button>
+    </div>
+    <script>
+        var mes = document.getElementById("mes");
+        if(window.WebSocket){
+            var ws = new WebSocket('ws://localhost:0000');
+
+            ws.onopen = function(e){
+                console.log("连接服务器成功");
+                ws.send("user1");
+            }
+
+            ws.onmessage = function(e){
+                if(e.data!=="user1"&&e.data!=="user2"){
+                    console.log(e);
+                    var newData = JSON.parse(e.data);
+                    var node=document.createElement("LI");
+                    var textnode=document.createTextNode(newData.mes);
+                    node.appendChild(textnode);
+                    if(newData.name==="user2"){
+                        node.classList.add("tl")
+                        mes.appendChild(node);
+                    } else{
+                        node.classList.add("tr")
+                        mes.appendChild(node);
+                    }
+                }
+                document.querySelector(".send").onclick = function(e){
+                    var obj = {
+                        name:"user1",
+                        mes:document.querySelector(".int").value
+                    }
+                    ws.send(JSON.stringify(obj));
+                    document.querySelector(".int").value="";
+                }
+            }
+
+            ws.onclose = function(e){
+                console.log("服务器关闭");
+            }
+
+            ws.onerror = function(){
+                console.log("连接出错");
+            }
+        }
+		console.log(JSON.stringify({s:1}))
+    </script>
+</body>
+</html>

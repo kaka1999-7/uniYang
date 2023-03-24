@@ -349,6 +349,10 @@
 .orderview .consul-type ._span.data-v-390a77b4:nth-child(1) {
 	float: left;
 }
+.orderview .consul-type .active.data-v-390a77b4{
+	color: white;
+	background-color: #0055ff;
+}
 .orderview .consul-type ._span.data-v-390a77b4:nth-child(n+2) {
 	float: right;
 	margin-right: 10rpx;
@@ -360,7 +364,8 @@
 	border-radius: 15rpx;
 }
 .orderview .consul-type .active.data-v-390a77b4 {
-	color: #0055ff;
+	background-color: #0055ff !important;
+	color: #fff !important;
 }
 .orderview .consul-times.data-v-390a77b4 {
 	font-size: 30rpx;

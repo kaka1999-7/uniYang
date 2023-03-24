@@ -1,4 +1,200 @@
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* */
 .container.data-v-fde57524{
 	width: 100%;
 	min-height: 100vh;
@@ -6,6 +202,8 @@
 	background-color: #fafafa;
 }
 .input-box.data-v-fde57524{
+	/* border: 1rpx solid red; */
+	height: 16vh;
 	width: 100%;
 	position: fixed;
 	bottom: 2rpx;
@@ -16,10 +214,14 @@
 .content.data-v-fde57524{
 	margin: 10rpx;
 	margin-bottom: 25%;
+	box-sizing: border-box;
 	position: relative;
+	height: 84vh;
+	left: -10rpx;
 	/* border: 1rpx solid red; */
-	padding: 10rpx;
-	overflow-y: auto;
+	padding: 10rpx 15rpx;
+	/* border: 1rpx chocolate solid; */
+	/* overflow-y: auto; */
 }
 .cancel-scroll.data-v-fde57524 {
 	overflow: hidden;

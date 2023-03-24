@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
 		<view class="header" @click="toLogin">
-			<image src="../../static/logo.png"></image>
+			<image :src="loginMes.headUrl"></image>
 			<view class="mes" v-if="!loginMes.isLogin">
 				<text>请登录/注册</text>
 				<text>手机号：***</text>

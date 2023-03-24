@@ -1,5 +1,5 @@
 
-.container .item.data-v-a91f51d4{
+.container .item.data-v-a91f51d4 {
 	display: flex;
 	height: 150rpx;
 	position: relative;
@@ -12,7 +12,7 @@
 	height: 0;
 	border: #bababa .5rpx solid;
 }
-.item view.data-v-a91f51d4:nth-child(2){
+.item view.data-v-a91f51d4:nth-child(2) {
 	width: 60%;
 	position: relative;
 	display: flex;
@@ -20,24 +20,24 @@
 	padding: 20rpx;
 }
 .item view.data-v-a91f51d4:nth-child(1),
-.item view.data-v-a91f51d4:nth-child(3){
+.item view.data-v-a91f51d4:nth-child(3) {
 	flex: 1;
 	position: relative;
 }
-.item .picture image.data-v-a91f51d4{
+.item .picture image.data-v-a91f51d4 {
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	-webkit-transform: translate(-50%,-50%);
-	        transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
 	width: 100rpx;
 	height: 100rpx;
 }
-.item .tittle text.data-v-a91f51d4:nth-child(1){
+.item .tittle text.data-v-a91f51d4:nth-child(1) {
 	font-weight: 20rpx;
 	color: black;
 }
-.item .tittle text.data-v-a91f51d4:nth-child(2){
+.item .tittle text.data-v-a91f51d4:nth-child(2) {
 	font-size: 25rpx;
 	color: #bababa;
 	display: inline-block;
@@ -46,7 +46,7 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
-.item .time text.data-v-a91f51d4{
+.item .time text.data-v-a91f51d4 {
 	display: inline-block;
 	font-size: 15rpx;
 	margin-top: 20rpx;

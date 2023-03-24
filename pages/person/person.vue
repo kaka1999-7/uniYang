@@ -43,7 +43,7 @@
 					<view class="tag">
 						<span>{{curentPerson.tags}}</span>
 						<span>/次</span>
-						<span>￥{{curentPerson.price}}</span>
+						<span>￥{{curentPerson.originPrice}}</span>
 					</view>
 					<view class="activity">
 						<span v-for="item in curentPerson.activities" :key='item.id'>{{item.tittle}}</span>
@@ -115,28 +115,26 @@
 					<view class="first-row">
 						<span>{{curentPerson.name}}</span>
 						<span>{{curentPerson.level[0]}}</span>
-						<span>￥{{curentPerson.price}}</span>
+						<span>￥{{curentPerson.originPrice}}</span>
 					</view>
 					<view class="second-row">
 						<span>{{curentPerson.servicePeople}}次咨询</span>
 					</view>
 					<view class="third-row">
-						<span>单次低至{{curentPerson.price-50}}元</span>
+						<span>单次低至{{curentPerson.originPrice-50}}元</span>
 						<span>单次时长{{curentPerson.time}}分钟</span>
 					</view>
 				</view>
 			</view>
 			<view class="consul-type">
 				<span>咨询方式</span>
-				<span>面对面</span>
-				<span>视频</span>
-				<span>语音</span>
+				<span :class="{active:item.isCurent}" v-for="item in curentPerson.consulType"  :key="item.id" @click="ckConsultType(item)">{{item.tittle}}</span>
 			</view>
 			<view class="consul-times">
 				<span>咨询次数</span>
-				<button>+</button>
-				<span>1</span>
-				<button>-</button>
+				<button @click="addTime">+</button>
+				<span >{{curentPerson.times}}</span>
+				<button @click="reduceTime">-</button>
 			</view>
 			<view class="pay-type">
 				<span>支付方式</span>
@@ -162,8 +160,8 @@
 				</view>
 				<view class="ct">
 					<view class="price">
-						<span>￥{{curentPerson.price-50}}</span>
 						<span>￥{{curentPerson.price}}</span>
+						<span>￥{{curentPerson.originPrice*curentPerson.times}}</span>
 					</view>
 					<button>去支付</button>
 				</view>
@@ -189,7 +187,10 @@
 					name: '杨大爷',
 					bgcImg: '../../static/person/head3.webp',
 					experienc: '从业1000年 · 1000000+人咨询',
-					price: 300,
+					price: 250,
+					originPrice:300,
+					oprPrice:300,
+					times:1,
 					level: ['宇宙级心里医师', '一级心里咨询师/CPS助理'],
 					serviceTime: "3400+小时",
 					servicePeople: "1000000人",
@@ -197,8 +198,25 @@
 					carrerTime: "18年2月",
 					fans: '1000人',
 					tags: "情绪管理 | 个人成长 | 心里健康",
-					location: '宇宙中心',
+					location: '四川省广安市广安区',
 					time: 50,
+					accpetType: ['视频', '语音', '面对面'],
+					tagList: ['海外专家', '职场发展', '情绪管理', '个人成长', '心里健康', '人际关系', '婚姻家庭', '恋爱情感', '情绪压力', '亲子教育', '性心理',
+						'家庭关系'],
+					sex: '男',
+					consulGroup: ['老人', "儿童", "青少年"],
+					sketchyAge: '90后',
+					timeList: [{
+							id: "time1",
+							date: 1,
+							part: ['全天', '', '', '']
+						},
+						{
+							id: "time2",
+							date: 2,
+							part: ['', '上午', '', '']
+						},
+					],
 					activities: [{
 							tittle: '满减活动|200减50',
 							id: 'person0act1'
@@ -305,12 +323,16 @@
 						}
 					],
 				},
-				personList: [{
+				personList: [
+					{
 						id: 'person0',
 						name: '杨大爷',
 						bgcImg: '../../static/person/head3.webp',
 						experienc: '从业1000年 · 1000000+人咨询',
-						price: 300,
+						price: 250,
+						originPrice:300 ,
+						oprPrice:300,
+						times:1,
 						level: ['宇宙级心里医师', '一级心里咨询师/CPS助理'],
 						serviceTime: "3400+小时",
 						servicePeople: "1000000人",
@@ -320,6 +342,24 @@
 						tags: "情绪管理 | 个人成长 | 心里健康",
 						location: '四川省广安市广安区',
 						time: 50,
+						accpetType: ['视频', '语音', '面对面'],
+						tagList: ['海外专家', '职场发展', '情绪管理', '个人成长', '心里健康', '人际关系', '婚姻家庭', '恋爱情感', '情绪压力', '亲子教育',
+							'性心理', '家庭关系'
+						],
+						sex: '男',
+						consulGroup: ['老人', "儿童", "青少年"],
+						sketchyAge: '90后',
+						timeList: [{
+								id: "time1",
+								date: 1,
+								part: ['全天', '', '', '']
+							},
+							{
+								id: "time2",
+								date: 2,
+								part: ['', '上午', '', '']
+							},
+						],
 						activities: [{
 								tittle: '满减活动|200减50',
 								id: 'person0act1'
@@ -335,15 +375,18 @@
 						],
 						consulType: [{
 								tittle: "视频",
-								id: "consul-type1"
+								id: "consul-type1",
+								isCurent:false
 							},
 							{
 								tittle: "面对面",
-								id: "consul-type2"
+								id: "consul-type2",
+								isCurent:false
 							},
 							{
 								tittle: "语音",
-								id: "consul-type3"
+								id: "consul-type3",
+								isCurent:false
 							}
 						],
 						consulDate: [{
@@ -431,7 +474,10 @@
 						name: '杨二爷',
 						bgcImg: '../../static/person/head2.webp',
 						experienc: '从业1000年 · 1000000+人咨询',
-						price: 500,
+						price: 450,
+						originPrice: 500,
+						oprPrice:500,
+						times:1,
 						level: ['宇宙级心里医师', '一级心里咨询师/CPS助理'],
 						serviceTime: "9600+小时",
 						servicePeople: "10000人",
@@ -441,6 +487,22 @@
 						tags: "婚姻家庭 | 个人成长 | 亲子教育",
 						location: '四川省广安市前锋区',
 						time: 50,
+						tagList: ['海外专家', '职场发展', '情绪管理', '个人成长'],
+						sex: '女',
+						accpetType: ['视频', '语音'],
+						consulGroup: ['中年人', "学生"],
+						sketchyAge: '80后',
+						timeList: [{
+								id: "time2",
+								date: 5,
+								part: ['全天', '上午', '', '']
+							},
+							{
+								id: "time1",
+								date: 6,
+								part: ['全天', '上午', '', '']
+							},
+						],
 						activities: [{
 								tittle: '满减活动|200减50',
 								id: 'person1act1'
@@ -456,15 +518,13 @@
 						],
 						consulType: [{
 								tittle: "视频",
-								id: "consul-type1"
-							},
-							{
-								tittle: "面对面",
-								id: "consul-type2"
+								id: "consul-type1",
+								isCurent:false,
 							},
 							{
 								tittle: "语音",
-								id: "consul-type3"
+								id: "consul-type3",
+								isCurent:false,
 							}
 						],
 						consulDate: [{
@@ -553,6 +613,9 @@
 						bgcImg: '../../static/person/head1.jpg',
 						experienc: '从业10年 · 10+人咨询',
 						price: 100,
+						originPrice: 100,
+						oprPrice:100,
+						times:1,
 						level: ['宇宙级心里医师', '一级心里咨询师/CPS助理'],
 						serviceTime: "9+小时",
 						servicePeople: "10人",
@@ -562,6 +625,22 @@
 						tags: "情绪管理 | 个人成长 | 人际关系",
 						location: '湖北省武汉市江汉区',
 						time: 50,
+						accpetType: ['语音', '面对面'],
+						tagList: ['心里健康', '人际关系', '婚姻家庭', '家庭关系'],
+						sex: '男',
+						consulGroup: ['职场人', "第三者"],
+						sketchyAge: '70后',
+						timeList: [{
+								id: "time1",
+								date: 3,
+								part: ['', '上午', '', '']
+							},
+							{
+								id: "time2",
+								date: 4,
+								part: ['全天', '', '', '']
+							}
+						],
 						activities: [{
 								tittle: '满减活动|200减50',
 								id: 'person1act1'
@@ -575,17 +654,16 @@
 								id: 'person1act3'
 							}
 						],
-						consulType: [{
-								tittle: "视频",
-								id: "consul-type1"
-							},
+						consulType: [
 							{
 								tittle: "面对面",
-								id: "consul-type2"
+								id: "consul-type2",
+								isCurent:false,
 							},
 							{
 								tittle: "语音",
-								id: "consul-type3"
+								id: "consul-type3",
+								isCurent:false,
 							}
 						],
 						consulDate: [{
@@ -673,7 +751,10 @@
 						name: '杨四爷',
 						bgcImg: '../../static/person/1.jpg',
 						experienc: '从业1000年 · 900+人咨询',
-						price: 700,
+						price: 650,
+						originPrice: 700,
+						oprPrice:700,
+						times:1,
 						level: ['宇宙级心里医师', '一级心里咨询师'],
 						serviceTime: "888+小时",
 						servicePeople: "909人",
@@ -683,6 +764,16 @@
 						tags: "情绪管理 | 个人成长 | 人际关系",
 						location: '湖北省武汉市江夏区',
 						time: 50,
+						accpetType: ['语音', '面对面'],
+						tagList: ['恋爱情感', '情绪压力', '亲子教育', '性心理'],
+						sex: '女',
+						consulGroup: ['孕妇', "夫妻", "LGBTQ"],
+						sketchyAge: '60后',
+						timeList: [{
+							id: "time3",
+							date: 7,
+							part: ['全天', '', '', '']
+						}],
 						activities: [{
 								tittle: '满减活动|200减50',
 								id: 'person1act1'
@@ -696,17 +787,16 @@
 								id: 'person1act3'
 							}
 						],
-						consulType: [{
-								tittle: "视频",
-								id: "consul-type1"
-							},
+						consulType: [
 							{
 								tittle: "面对面",
-								id: "consul-type2"
+								id: "consul-type2",
+								isCurent:false,
 							},
 							{
 								tittle: "语音",
-								id: "consul-type3"
+								id: "consul-type3",
+								isCurent:false,
 							}
 						],
 						consulDate: [{
@@ -796,11 +886,68 @@
 		components: {
 			QS
 		},
+		created() {
+			
+		},
 		onLoad(option) {
-			this.curentPerson = this.personList.find(el => el.id === option.id)
-			if (!this.curentPerson) this.curentPerson = this.personList[0]
+			//适应h5请求
+			uni.request({
+				method:"GET",
+				url:'/api/person/personlist',
+				data:{
+					id:option.id
+				}
+			}).then(res=>{
+				console.log(res)
+				if(res[1]&&res[1].data){
+				this.curentPerson=res[1].data
+				}
+			})
+			uni.request({
+				method:"GET",
+				url:this.baseUrl+'person/personlist',
+				data:{
+					id:option.id
+				}
+			}).then(res=>{
+				console.log(res)
+				if(res[1]&&res[1].data){
+				this.curentPerson=res[1].data
+				}
+			})
+			// this.curentPerson = this.personList.find(el => el.id === option.id)
+			// if (!this.curentPerson) this.curentPerson = this.personList[0]
+			
 		},
 		methods: {
+			reduceTime(){
+				if(this.curentPerson.times===1){
+					return
+				}
+				this.curentPerson.times-=1;
+				this.curentPerson.price=this.curentPerson.times*(this.curentPerson.originPrice-50)
+			},
+			addTime(){
+				if(this.curentPerson.times===5){
+					return
+				}
+				this.curentPerson.times+=1;
+				this.curentPerson.price=this.curentPerson.times*(this.curentPerson.originPrice-50)
+			},
+			ckConsultType(item){
+				this.curentPerson.consulType.forEach(el=>{
+					el.isCurent=false
+				})
+				item.isCurent=true
+				if(item.tittle==="视频"){
+					this.curentPerson.originPrice=this.curentPerson.oprPrice*0.8
+				}else if(item.tittle==="语音"){
+					this.curentPerson.originPrice=this.curentPerson.oprPrice*0.7
+				}else{
+					this.curentPerson.originPrice=this.curentPerson.oprPrice
+				}
+				// console.log(text)
+			},
 			ckCatagery(ck) {
 				this.curentCatagery = ck
 			},
@@ -812,9 +959,18 @@
 			},
 			cancelOrder() {
 				this.showOrderView = false
+				this.curentPerson.price=this.curentPerson.originPrice
 			},
 			ckAggrement() {
 				this.order.aggrement = !this.order.aggrement
+			}
+		},
+		watch:{
+			'curentPerson.originPrice':{
+				handler(){
+					this.addTime()
+					this.reduceTime()
+				}
 			}
 		}
 	}
@@ -1228,7 +1384,10 @@
 	.orderview .consul-type span:nth-child(1) {
 		float: left;
 	}
-
+	.orderview .consul-type .active{
+		color: white;
+		background-color: #0055ff;
+	}
 	.orderview .consul-type span:nth-child(n+2) {
 		float: right;
 		margin-right: 10rpx;
@@ -1241,7 +1400,8 @@
 	}
 
 	.orderview .consul-type .active {
-		color: #0055ff;
+		background-color: #0055ff !important;
+		color: #fff !important;
 	}
 
 	.orderview .consul-times {

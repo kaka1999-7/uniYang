@@ -49,63 +49,74 @@
 				registedPerson:[{
 					account:"admin01",
 					password:"123456",
-					type:"administrator"
+					type:"administrator",
+					picture: "../../static/person/1.jpg",
 				},
 				{
 					account:"doctor01",
 					password:"123456",
-					type:"doctor"
+					type:"doctor",
+					picture: "../../static/person/1.jpg",
 				},
 				{
 					account:"doctor02",
 					password:"123456",
-					type:"doctor"
+					type:"doctor",
+					picture: "../../static/person/head1.jpg",
 				},
 				{
 					account:"member01",
 					password:"123456",
-					type:"member"
+					type:"member",
+					picture: "../../static/person/head3.webp",
 				},
 				{
 					account:"member02",
 					password:"123456",
-					type:"member"
+					type:"member",
+					picture: "../../static/person/head2.webp",
 				},
-				{
-					account:"member02",
-					password:"123456",
-					type:"member"
-				}]
+				]
 			}
 		},
 		methods: {
-			submit() {
+			async submit() {
 				if(!this.formData.aggrement){  //勾选协议
 					uni.showModal({
 						content:"请同意协议！"
 					})
 					return
 				}
-				let mem = this.registedPerson.find(el=>{  //查询信息是否正确
-					return (this.formData.account===el.account&&this.formData.password===el.password)
+				await uni.request({
+					url:this.baseUrl+"login",
+					data:{
+						account:this.formData.account,
+						password:this.formData.password
+					}
+				}).then(res=>{
+					if(res[1]&&res[1].data){
+						let mem=res[1].data
+						if(mem){
+							uni.setStorage({
+								key:"ydy-memberMes",
+								data:{
+									isLogin:true,
+									account:mem.account,
+									type:mem.type,
+									headUrl:mem.picture
+								}    //第一个参数为是否登录，第二个参数为用户名,第三个参数为用户类别
+							})
+							uni.switchTab({
+								url:"/pages/index/index"
+							})
+						}
+					}else{
+						console.log(res[1].data)
+						uni.showModal({
+							content:"账号或密码错误！"
+						})
+					}
 				})
-				if(mem){
-					uni.setStorage({
-						key:"ydy-memberMes",
-						data:{
-							isLogin:true,
-							account:mem.account,
-							type:mem.type
-						}    //第一个参数为是否登录，第二个参数为用户名,第三个参数为用户类别
-					})
-					uni.switchTab({
-						url:"/pages/index/index"
-					})
-				}else{
-					uni.showModal({
-						content:"账号或密码错误！"
-					})
-				}
 				
 			},
 			checkacc() {

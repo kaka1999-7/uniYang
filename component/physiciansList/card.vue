@@ -46,8 +46,8 @@
 		},
 		props:{
 			person:{
-				require:true,
-				type:Object
+				// require:true,
+				// type:Object
 			}
 		}
 	}

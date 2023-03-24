@@ -150,32 +150,35 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 var _default =
 {
   data: function data() {
     return {
-      messageList: [{
-        aimAccount: "member001",
-        picture: "../../static/person/1.jpg",
-        name: "【每日推送】",
-        tittle: "不得不工作的意义到底是啥？",
-        lastTime: "晚上 8:00" },
+      messageList: [] };
 
+  },
+  created: function created() {
 
-      {
-        aimAccount: "member002",
-        picture: "../../static/person/head1.jpg",
-        name: "杨大爷的qq",
-        tittle: "为了干饭啊",
-        lastTime: "晚上 12:00" },
+  },
+  onShow: function onShow() {var _this = this;
+    uni.getStorage({
+      key: "ydy-memberMes" }).
+    then(function (res) {
+      if (res && res[1]) {
+        uni.request({
+          url: _this.baseUrl + 'message/simplelist',
+          data: {
+            account: res[1].data.account } }).
 
-      {
-        aimAccount: "member003",
-        picture: "../../static/person/head3.webp",
-        name: "杨大爷的微信",
-        tittle: "为了妹妹啊",
-        lastTime: "晚上 11:00" }] };
+        then(function (res) {
+          if (res[1] && res[1].data) {
+            _this.messageList = res[1].data;
+          }
+        });
 
+      }
+    });
 
   },
   methods: {
