@@ -18,7 +18,7 @@ serve.get("/physicians/catagery",(req,res)=>{
 	res.json(catagery)
 })
 serve.get("/physicians/personlist",(req,res)=>{
-	console.log('aa')
+	// console.log('aa')
 	res.json(originPersonList)
 })
 serve.get("/person/personlist",(req,res)=>{
@@ -91,6 +91,8 @@ serve.get("/communicate",(req,res)=>{
 serve.get("/login",(req,res)=>{
 	let {account,password}=req.query
 	let result = accountList.find(el => el.account===account&&el.password===password)
+	// console.log(accountList)
+	
 	res.json(result)
 })
 serve.listen(PORT,()=>{
@@ -124,12 +126,8 @@ ws.createServer(conn=>{
 			aclist.forEach(el=>{
 				if(el.account===data.aimAccount&&el.conn&&el.isReady){
 					el.conn.sendText(JSON.stringify(data.data))
-					// console.log(el.account,data.aimAccount)
 				}
-				// if(el.conn){
-				// 	el.conn.sendText(JSON.stringify(data.data))
-				// 	console.log(aclist)
-				// }
+			
 			})
 			messageList.forEach(el=>{
 				let flag1=false
@@ -145,7 +143,6 @@ ws.createServer(conn=>{
 				console.log(data.aimAccount,data.data)
 				if(flag1&&flag2){
 					el.mes.push(data.data)
-					// console.log(el.mes)
 				}
 			})
 			

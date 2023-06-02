@@ -205,7 +205,7 @@
 <style scoped>
 	.container {
 		padding: 10rpx 20rpx;
-		border: 1rpx solid red;
+		/* border: 1rpx solid red; */
 		min-height: 90vh;
 		background-color: #fff;
 	}

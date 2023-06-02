@@ -62,13 +62,9 @@
 			  console.log('WebSocket 已关闭！');
 			});
 			uni.onSocketMessage((res)=>{
-				// console.log('sss')
 				let data=JSON.parse(res.data)
 				this.aimMes.mes.push(data)
-				// console.log(this.aimMes.mes)
 				setTimeout(()=>{this.scrollTop+=10},600)
-				// this.scrollBottom()
-			  // console.log('收到服务器内容：' + res.data);
 			});
 			
 			}else{    //其他平台使用原生websocket
@@ -77,17 +73,13 @@
 				ws.onopen = (e)=>{
 					this.wsIsReady=true
 				    console.log("连接服务器成功");
-					// console.log(this.wsIsReady)
 				}
 				 ws.onmessage=(res)=>{
 					 let data=JSON.parse(res.data)
 					 this.aimMes.mes.push(data)
 					 setTimeout(()=>{this.scrollTop+=10},600)
-					 // this.scrollBottom()
-					 // console.log(this)
 				 }
 				 ws.onclose = (e)=>{
-					 // this.wsIsReady=false
 				     console.log("服务器关闭");
 				 }
 				 
@@ -126,7 +118,6 @@
 			}).then(res=>{
 				if(res&&res[1]){
 					this.myAccount=res[1].data
-					// console.log(res[1].data.account,option.account)
 					uni.request({		//请求数据
 						url:this.baseUrl+"communicate",
 						data:{
@@ -138,19 +129,6 @@
 							this.aimMes=res[1].data
 						}
 					})
-					
-					// uni.request({		//适应h5的请求
-					// 	url:"/api/communicate",
-					// 	data:{
-					// 		account:res[1].data.account,
-					// 		aimAccount:option.account
-					// 	}
-					// }).then(res=>{
-					// 	if(res[1]&&res[1].data){
-					// 		// console.log(res[1])
-					// 		this.aimMes=res[1].data
-					// 	}
-					// })
 					
 				}
 			})

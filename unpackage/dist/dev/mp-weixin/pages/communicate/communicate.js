@@ -219,13 +219,9 @@ var _default = { data: function data() {return { scrollTop: 0, aimMes: { name: "
         console.log('WebSocket 已关闭！');
       });
       uni.onSocketMessage(function (res) {
-        // console.log('sss')
         var data = JSON.parse(res.data);
         _this.aimMes.mes.push(data);
-        // console.log(this.aimMes.mes)
         setTimeout(function () {_this.scrollTop += 10;}, 600);
-        // this.scrollBottom()
-        // console.log('收到服务器内容：' + res.data);
       });
 
     } else {//其他平台使用原生websocket
@@ -234,17 +230,13 @@ var _default = { data: function data() {return { scrollTop: 0, aimMes: { name: "
       ws.onopen = function (e) {
         _this.wsIsReady = true;
         console.log("连接服务器成功");
-        // console.log(this.wsIsReady)
       };
       ws.onmessage = function (res) {
         var data = JSON.parse(res.data);
         _this.aimMes.mes.push(data);
         setTimeout(function () {_this.scrollTop += 10;}, 600);
-        // this.scrollBottom()
-        // console.log(this)
       };
       ws.onclose = function (e) {
-        // this.wsIsReady=false
         console.log("服务器关闭");
       };
 
@@ -283,7 +275,6 @@ var _default = { data: function data() {return { scrollTop: 0, aimMes: { name: "
     then(function (res) {
       if (res && res[1]) {
         _this.myAccount = res[1].data;
-        // console.log(res[1].data.account,option.account)
         uni.request({ //请求数据
           url: _this.baseUrl + "communicate",
           data: {
@@ -295,19 +286,6 @@ var _default = { data: function data() {return { scrollTop: 0, aimMes: { name: "
             _this.aimMes = res[1].data;
           }
         });
-
-        // uni.request({		//适应h5的请求
-        // 	url:"/api/communicate",
-        // 	data:{
-        // 		account:res[1].data.account,
-        // 		aimAccount:option.account
-        // 	}
-        // }).then(res=>{
-        // 	if(res[1]&&res[1].data){
-        // 		// console.log(res[1])
-        // 		this.aimMes=res[1].data
-        // 	}
-        // })
 
       }
     });

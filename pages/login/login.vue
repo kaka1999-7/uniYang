@@ -94,6 +94,7 @@
 						password:this.formData.password
 					}
 				}).then(res=>{
+					
 					if(res[1]&&res[1].data){
 						let mem=res[1].data
 						if(mem){
@@ -111,7 +112,7 @@
 							})
 						}
 					}else{
-						console.log(res[1].data)
+						// console.log(res[1].data)
 						uni.showModal({
 							content:"账号或密码错误！"
 						})

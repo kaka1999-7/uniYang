@@ -3,7 +3,8 @@ const {
 	originPersonList
 } = require("./data/data")
 
-let acc = [{
+let acc = [
+	{
 		account: "admin01",
 		password: "123456",
 		type: "administrator",
@@ -133,15 +134,10 @@ let connection = mysql.createConnection({
 	port: 3306,
 	database: 'yt'
 })
-// originPersonList.forEach(e=>{
-// 	connection.query(`insert into  personInfoList value('${e.id}','${JSON.stringify(e)}');`)
-// })
-
 function insertAccount(accountList) {
 	try {
 		accountList.forEach(el => {
 			let insert =`insert into account value("${el.account}","${el.password}","${el.type}","${el.picture}");`
-				
 			connection.query(insert, (err, res) => {
 				console.log(res)
 			})

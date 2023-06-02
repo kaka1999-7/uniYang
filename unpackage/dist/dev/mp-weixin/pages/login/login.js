@@ -257,6 +257,7 @@ var _default =
                       password: _this.formData.password } }).
 
                   then(function (res) {
+
                     if (res[1] && res[1].data) {
                       var mem = res[1].data;
                       if (mem) {
@@ -274,7 +275,7 @@ var _default =
 
                       }
                     } else {
-                      console.log(res[1].data);
+                      // console.log(res[1].data)
                       uni.showModal({
                         content: "账号或密码错误！" });
 

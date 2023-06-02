@@ -127,7 +127,23 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 var _default =
-{};exports.default = _default;
+{
+  data: function data() {
+    return {
+      greate: "../../static/commponents/ico-greate.png",
+      flag: true };
+
+  },
+  methods: {
+    handelGreate: function handelGreate() {
+      this.flag = false;
+      if ("../../static/commponents/ico-greate.png" === this.greate) {
+        this.greate = "../../static/commponents/ico-greate-act.png";
+      } else {
+        this.greate = "../../static/commponents/ico-greate.png";
+      }
+      this.flag = true;
+    } } };exports.default = _default;
 
 /***/ }),
 

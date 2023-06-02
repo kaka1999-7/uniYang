@@ -4,7 +4,7 @@
 		<view class="left">
 			<image src="../../static/commponents/ico-transmit.png" mode=""></image>
 			<image src="../../static/commponents/ico-comment.png" mode=""></image>
-			<image src="../../static/commponents/ico-greate.png" mode=""></image>
+			<image v-if="flag" :src="greate" @click="handelGreate" mode=""></image>
 		</view>
 		<image src="../../static/commponents/ico-more.png" mode=""></image>
 	</view>
@@ -12,7 +12,23 @@
 
 <script>
 	export default{
-		
+		data(){
+			return {
+				greate:"../../static/commponents/ico-greate.png",
+				flag:true
+			}
+		},
+		methods:{
+			handelGreate(){
+				this.flag=false
+				if("../../static/commponents/ico-greate.png"===this.greate){
+					this.greate="../../static/commponents/ico-greate-act.png"
+				}else{
+					this.greate="../../static/commponents/ico-greate.png"
+				}
+				this.flag=true
+			}
+		}
 	}
 </script>
 

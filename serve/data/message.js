@@ -59,30 +59,19 @@ const messageList = [
 	},
 	{
 		relevant:"member01&doctor01",
-		mes: [{
-				id: "mes1",
-				text: "呵呵！",
-				from: "member01",
-				headUrl: "../../static/person/head3.webp",
-			},
+		mes: [
 			{
-				id: "mes2",
-				text: "呵呵呵呵呵呵呵呵呵呵！",
-				from: 'doctor01',
-				headUrl: "../../static/person/1.jpg",
-			},
-			{
-				id: "mes3",
-				text: "呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵",
-				from: 'member01',
-				headUrl: "../../static/person/head3.webp",
-			},
-			{
-				id: "mes4",
-				text: "呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵",
-				from: 'doctor01',
-				headUrl: "../../static/person/1.jpg",
-			}
+					id: "mes1",
+					text: "测试内容1",
+					from: "member01",
+					headUrl: "../../static/person/head3.webp",
+				},
+				{
+					id: "mes2",
+					text: "测试内容2",
+					from: 'doctor01',
+					headUrl: "../../static/person/1.jpg",
+				}
 		]
 	},
 	{
